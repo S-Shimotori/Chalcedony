@@ -17,10 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qa-kX-blY" userLabel="buttonToDataView">
-                                <rect key="frame" x="0.0" y="420" width="600" height="50"/>
+                                <rect key="frame" x="10" y="420" width="580" height="50"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.32549019610000002" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4vp-4Z-FPn"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="data view">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,10 +31,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10i-Ko-4T2" userLabel="buttonToSettingView">
-                                <rect key="frame" x="0.0" y="480" width="600" height="50"/>
+                                <rect key="frame" x="10" y="480" width="580" height="50"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.32549019610000002" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="uPe-is-1Ve"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="setting view">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,10 +45,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0k-y2-SLX" userLabel="buttonToAboutAppView">
-                                <rect key="frame" x="0.0" y="540" width="600" height="50"/>
+                                <rect key="frame" x="10" y="540" width="580" height="50"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.32549019610000002" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0fC-vi-Gzf"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="about app">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -60,9 +66,9 @@
                             <constraint firstItem="10i-Ko-4T2" firstAttribute="top" secondItem="2qa-kX-blY" secondAttribute="bottom" constant="10" id="GF2-lr-tcS"/>
                             <constraint firstItem="i0k-y2-SLX" firstAttribute="top" secondItem="10i-Ko-4T2" secondAttribute="bottom" constant="10" id="T4h-5F-6g9"/>
                             <constraint firstItem="6n6-Kw-RKB" firstAttribute="top" secondItem="i0k-y2-SLX" secondAttribute="bottom" constant="10" id="a84-gm-dQ4"/>
-                            <constraint firstItem="2qa-kX-blY" firstAttribute="width" secondItem="TIJ-0F-0jz" secondAttribute="width" id="b2i-um-iWu"/>
-                            <constraint firstItem="10i-Ko-4T2" firstAttribute="width" secondItem="TIJ-0F-0jz" secondAttribute="width" id="dzp-tA-Fi6"/>
-                            <constraint firstItem="i0k-y2-SLX" firstAttribute="width" secondItem="TIJ-0F-0jz" secondAttribute="width" id="qM1-yp-UjT"/>
+                            <constraint firstAttribute="width" secondItem="2qa-kX-blY" secondAttribute="width" constant="20" id="b2i-um-iWu"/>
+                            <constraint firstAttribute="width" secondItem="10i-Ko-4T2" secondAttribute="width" constant="20" id="dzp-tA-Fi6"/>
+                            <constraint firstAttribute="width" secondItem="i0k-y2-SLX" secondAttribute="width" constant="20" id="qM1-yp-UjT"/>
                             <constraint firstAttribute="centerX" secondItem="10i-Ko-4T2" secondAttribute="centerX" id="qUM-ti-fcP"/>
                         </constraints>
                     </view>
