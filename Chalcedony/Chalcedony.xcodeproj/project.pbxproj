@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		7663B3EB7192199B7404B85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B554196A1B343FC4008D3357 /* Chalcedony-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chalcedony-Bridging-Header.h"; sourceTree = "<group>"; };
 		B597DE8A1B343770002A7CC8 /* Chalcedony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chalcedony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DE8E1B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B597DE8F1B343770002A7CC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 				B597DE961B343770002A7CC8 /* Images.xcassets */,
 				B597DE981B343770002A7CC8 /* LaunchScreen.xib */,
 				B597DE8D1B343770002A7CC8 /* Supporting Files */,
+				B554196A1B343FC4008D3357 /* Chalcedony-Bridging-Header.h */,
 			);
 			path = Chalcedony;
 			sourceTree = "<group>";
@@ -453,6 +455,7 @@
 				INFOPLIST_FILE = Chalcedony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chalcedony/Chalcedony-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -468,6 +471,7 @@
 				INFOPLIST_FILE = Chalcedony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chalcedony/Chalcedony-Bridging-Header.h";
 			};
 			name = Release;
 		};
