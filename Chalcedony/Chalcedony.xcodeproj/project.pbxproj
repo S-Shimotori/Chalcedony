@@ -13,6 +13,8 @@
 		B597DE971B343770002A7CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597DE961B343770002A7CC8 /* Images.xcassets */; };
 		B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B597DE981B343770002A7CC8 /* LaunchScreen.xib */; };
 		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
+		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
+		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChalcedonyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DEA41B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
+		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */,
+				B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,7 @@
 		B597DE811B343770002A7CC8 = {
 			isa = PBXGroup;
 			children = (
+				B597DEB01B343933002A7CC8 /* Fabric */,
 				B597DE8C1B343770002A7CC8 /* Chalcedony */,
 				B597DEA21B343770002A7CC8 /* ChalcedonyTests */,
 				B597DE8B1B343770002A7CC8 /* Products */,
@@ -112,6 +119,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B597DEB01B343933002A7CC8 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				B597DEB11B343954002A7CC8 /* Fabric.framework */,
+				B597DEB21B343954002A7CC8 /* Crashlytics.framework */,
+			);
+			name = Fabric;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +138,7 @@
 				B597DE861B343770002A7CC8 /* Sources */,
 				B597DE871B343770002A7CC8 /* Frameworks */,
 				B597DE881B343770002A7CC8 /* Resources */,
+				B597DEAF1B3438FE002A7CC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -206,6 +223,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B597DEAF1B3438FE002A7CC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d8dbc63f660dbd23cd79d51d2570f7f11a618e47 d67c307d4d7b0d5ed18426ae5bab445032e348423687779d63d48249c50adf86";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B597DE861B343770002A7CC8 /* Sources */ = {
@@ -340,6 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chalcedony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chalcedony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
