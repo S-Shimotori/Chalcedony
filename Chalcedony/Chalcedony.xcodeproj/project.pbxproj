@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DE8F1B343770002A7CC8 /* AppDelegate.swift */; };
+		B597DE921B343770002A7CC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DE911B343770002A7CC8 /* ViewController.swift */; };
+		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
+		B597DE971B343770002A7CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597DE961B343770002A7CC8 /* Images.xcassets */; };
+		B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B597DE981B343770002A7CC8 /* LaunchScreen.xib */; };
+		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B597DEA01B343770002A7CC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B597DE821B343770002A7CC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B597DE891B343770002A7CC8;
+			remoteInfo = Chalcedony;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B597DE8A1B343770002A7CC8 /* Chalcedony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chalcedony.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B597DE8E1B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B597DE8F1B343770002A7CC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B597DE911B343770002A7CC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B597DE941B343770002A7CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B597DE961B343770002A7CC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B597DE991B343770002A7CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChalcedonyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B597DEA41B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B597DE871B343770002A7CC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B597DE9C1B343770002A7CC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B597DE811B343770002A7CC8 = {
+			isa = PBXGroup;
+			children = (
+				B597DE8C1B343770002A7CC8 /* Chalcedony */,
+				B597DEA21B343770002A7CC8 /* ChalcedonyTests */,
+				B597DE8B1B343770002A7CC8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B597DE8B1B343770002A7CC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B597DE8A1B343770002A7CC8 /* Chalcedony.app */,
+				B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B597DE8C1B343770002A7CC8 /* Chalcedony */ = {
+			isa = PBXGroup;
+			children = (
+				B597DE8F1B343770002A7CC8 /* AppDelegate.swift */,
+				B597DE911B343770002A7CC8 /* ViewController.swift */,
+				B597DE931B343770002A7CC8 /* Main.storyboard */,
+				B597DE961B343770002A7CC8 /* Images.xcassets */,
+				B597DE981B343770002A7CC8 /* LaunchScreen.xib */,
+				B597DE8D1B343770002A7CC8 /* Supporting Files */,
+			);
+			path = Chalcedony;
+			sourceTree = "<group>";
+		};
+		B597DE8D1B343770002A7CC8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B597DE8E1B343770002A7CC8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B597DEA21B343770002A7CC8 /* ChalcedonyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */,
+				B597DEA31B343770002A7CC8 /* Supporting Files */,
+			);
+			path = ChalcedonyTests;
+			sourceTree = "<group>";
+		};
+		B597DEA31B343770002A7CC8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B597DEA41B343770002A7CC8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B597DE891B343770002A7CC8 /* Chalcedony */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B597DEA91B343770002A7CC8 /* Build configuration list for PBXNativeTarget "Chalcedony" */;
+			buildPhases = (
+				B597DE861B343770002A7CC8 /* Sources */,
+				B597DE871B343770002A7CC8 /* Frameworks */,
+				B597DE881B343770002A7CC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chalcedony;
+			productName = Chalcedony;
+			productReference = B597DE8A1B343770002A7CC8 /* Chalcedony.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B597DE9E1B343770002A7CC8 /* ChalcedonyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B597DEAC1B343770002A7CC8 /* Build configuration list for PBXNativeTarget "ChalcedonyTests" */;
+			buildPhases = (
+				B597DE9B1B343770002A7CC8 /* Sources */,
+				B597DE9C1B343770002A7CC8 /* Frameworks */,
+				B597DE9D1B343770002A7CC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B597DEA11B343770002A7CC8 /* PBXTargetDependency */,
+			);
+			name = ChalcedonyTests;
+			productName = ChalcedonyTests;
+			productReference = B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B597DE821B343770002A7CC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "S-Shimotori";
+				TargetAttributes = {
+					B597DE891B343770002A7CC8 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					B597DE9E1B343770002A7CC8 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = B597DE891B343770002A7CC8;
+					};
+				};
+			};
+			buildConfigurationList = B597DE851B343770002A7CC8 /* Build configuration list for PBXProject "Chalcedony" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B597DE811B343770002A7CC8;
+			productRefGroup = B597DE8B1B343770002A7CC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B597DE891B343770002A7CC8 /* Chalcedony */,
+				B597DE9E1B343770002A7CC8 /* ChalcedonyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B597DE881B343770002A7CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B597DE951B343770002A7CC8 /* Main.storyboard in Resources */,
+				B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */,
+				B597DE971B343770002A7CC8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B597DE9D1B343770002A7CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B597DE861B343770002A7CC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B597DE921B343770002A7CC8 /* ViewController.swift in Sources */,
+				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B597DE9B1B343770002A7CC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B597DEA11B343770002A7CC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B597DE891B343770002A7CC8 /* Chalcedony */;
+			targetProxy = B597DEA01B343770002A7CC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B597DE931B343770002A7CC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B597DE941B343770002A7CC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B597DE981B343770002A7CC8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B597DE991B343770002A7CC8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B597DEA71B343770002A7CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B597DEA81B343770002A7CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B597DEAA1B343770002A7CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chalcedony/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B597DEAB1B343770002A7CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chalcedony/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B597DEAD1B343770002A7CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChalcedonyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chalcedony.app/Chalcedony";
+			};
+			name = Debug;
+		};
+		B597DEAE1B343770002A7CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChalcedonyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chalcedony.app/Chalcedony";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B597DE851B343770002A7CC8 /* Build configuration list for PBXProject "Chalcedony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B597DEA71B343770002A7CC8 /* Debug */,
+				B597DEA81B343770002A7CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B597DEA91B343770002A7CC8 /* Build configuration list for PBXNativeTarget "Chalcedony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B597DEAA1B343770002A7CC8 /* Debug */,
+				B597DEAB1B343770002A7CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B597DEAC1B343770002A7CC8 /* Build configuration list for PBXNativeTarget "ChalcedonyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B597DEAD1B343770002A7CC8 /* Debug */,
+				B597DEAE1B343770002A7CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B597DE821B343770002A7CC8 /* Project object */;
+}
