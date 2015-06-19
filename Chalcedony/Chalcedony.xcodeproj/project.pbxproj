@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */; };
 		B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DE8F1B343770002A7CC8 /* AppDelegate.swift */; };
 		B597DE921B343770002A7CC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DE911B343770002A7CC8 /* ViewController.swift */; };
 		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		7663B3EB7192199B7404B85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B554196A1B343FC4008D3357 /* Chalcedony-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chalcedony-Bridging-Header.h"; sourceTree = "<group>"; };
+		B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMainViewController.swift; sourceTree = "<group>"; };
 		B597DE8A1B343770002A7CC8 /* Chalcedony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chalcedony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DE8E1B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B597DE8F1B343770002A7CC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B56D56231B345139008B18A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		B597DE811B343770002A7CC8 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		B597DE8C1B343770002A7CC8 /* Chalcedony */ = {
 			isa = PBXGroup;
 			children = (
+				B56D56231B345139008B18A8 /* ViewController */,
 				B597DE8F1B343770002A7CC8 /* AppDelegate.swift */,
 				B597DE911B343770002A7CC8 /* ViewController.swift */,
 				B597DE931B343770002A7CC8 /* Main.storyboard */,
@@ -319,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
 				B597DE921B343770002A7CC8 /* ViewController.swift in Sources */,
 				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
 			);
