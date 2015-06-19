@@ -1,0 +1,46 @@
+PODS:
+  - IQKeyboardManager (3.2.4)
+  - OMGHTTPURLRQ (2.1):
+    - OMGHTTPURLRQ/RQ (= 2.1)
+  - OMGHTTPURLRQ/FormURLEncode (2.1)
+  - OMGHTTPURLRQ/RQ (2.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1)
+  - PNChart (0.8.3):
+    - UICountingLabel (~> 1.2.0)
+  - PromiseKit (2.0.4):
+    - PromiseKit/Foundation (= 2.0.4)
+    - PromiseKit/QuartzCore (= 2.0.4)
+    - PromiseKit/UIKit (= 2.0.4)
+  - PromiseKit/CorePromise (2.0.4)
+  - PromiseKit/Foundation (2.0.4):
+    - OMGHTTPURLRQ (<= 2.1.3)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (2.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (2.0.4):
+    - PromiseKit/CorePromise
+  - Realm (0.93.2):
+    - Realm/Headers (= 0.93.2)
+  - Realm/Headers (0.93.2)
+  - RealmSwift (0.93.2):
+    - Realm (= 0.93.2)
+  - UICountingLabel (1.2.0)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - PNChart
+  - PromiseKit (~> 2.0)
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
+  PNChart: 8d81e061ec4845915184755d8da84f385ca1cb28
+  PromiseKit: d7d1a1e86a9d661b6396cc1b714da406b6503ef9
+  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
+  RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+
+COCOAPODS: 0.37.1

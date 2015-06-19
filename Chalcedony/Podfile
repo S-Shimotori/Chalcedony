@@ -1,0 +1,6 @@
+use_frameworks!
+pod 'IQKeyboardManager'
+pod 'RealmSwift'
+pod "PromiseKit", "~> 2.0"
+pod 'PNChart'
+
