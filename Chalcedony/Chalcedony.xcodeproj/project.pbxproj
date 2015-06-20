@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */; };
 		B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */; };
-		B56D56291B345B55008B18A8 /* CCDSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56281B345B55008B18A8 /* CCDSettingViewController.swift */; };
 		B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */; };
 		B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DE8F1B343770002A7CC8 /* AppDelegate.swift */; };
 		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
@@ -18,6 +17,7 @@
 		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
+		B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */; };
 		F8DAA0E0A83715D3851A83D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,6 @@
 		B554196A1B343FC4008D3357 /* Chalcedony-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chalcedony-Bridging-Header.h"; sourceTree = "<group>"; };
 		B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMainViewController.swift; sourceTree = "<group>"; };
 		B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDataViewController.swift; sourceTree = "<group>"; };
-		B56D56281B345B55008B18A8 /* CCDSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingViewController.swift; sourceTree = "<group>"; };
 		B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDAboutAppViewController.swift; sourceTree = "<group>"; };
 		B597DE8A1B343770002A7CC8 /* Chalcedony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chalcedony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DE8E1B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableViewController.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,8 +88,8 @@
 			children = (
 				B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */,
 				B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */,
-				B56D56281B345B55008B18A8 /* CCDSettingViewController.swift */,
 				B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */,
+				B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -336,11 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B56D56291B345B55008B18A8 /* CCDSettingViewController.swift in Sources */,
 				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
 				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
+				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
