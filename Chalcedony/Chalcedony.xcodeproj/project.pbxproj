@@ -22,6 +22,7 @@
 		B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FB1B353634000A9537 /* CCDSetting.swift */; };
 		B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */; };
 		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
+		B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */; };
 		F8DAA0E0A83715D3851A83D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		B5D118FB1B353634000A9537 /* CCDSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSetting.swift; sourceTree = "<group>"; };
 		B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryModel.swift; sourceTree = "<group>"; };
 		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
+		B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDKaeritaiCountModel.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				B5D118FB1B353634000A9537 /* CCDSetting.swift */,
 				B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */,
 				B5D118FF1B353AA4000A9537 /* CCDMessage.swift */,
+				B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
+				B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
 				B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */,
 				B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */,

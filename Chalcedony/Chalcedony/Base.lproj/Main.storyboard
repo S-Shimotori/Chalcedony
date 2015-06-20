@@ -395,6 +395,7 @@
                         <outlet property="labelToShowHowLongStay" destination="xJo-RA-yUC" id="mLR-Ej-nAs"/>
                         <outlet property="labelToShowLocateSetting" destination="TeA-yr-crw" id="VSu-wL-5IO"/>
                         <outlet property="labelToShowStatus" destination="pet-cd-azI" id="DU6-Nt-T46"/>
+                        <outlet property="labelToShowTheNumberOfKaeritai" destination="GpU-Qb-Ymj" id="TUP-0c-NtF"/>
                         <outlet property="labelToShowTwitterSetting" destination="IPw-sx-vj1" id="9DN-c5-qQ5"/>
                     </connections>
                 </viewController>

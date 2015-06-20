@@ -10,6 +10,7 @@ class CCDSetting {
     func initialize() {
         initialized = true
         lastEntranceDate = nil
+        kaeritaiCount = 0
     }
 
     var initialized: Bool {
@@ -36,6 +37,16 @@ class CCDSetting {
             return true
         } else {
             return false
+        }
+    }
+
+    var kaeritaiCount: Int {
+        get {
+        return NSUserDefaults.standardUserDefaults().objectForKey("kaeritaiCount") as! Int
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "kaeritaiCount")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
 }

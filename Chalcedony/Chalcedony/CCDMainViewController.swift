@@ -14,6 +14,8 @@ class CCDMainViewController: UIViewController {
     @IBOutlet private weak var labelToShowTwitterSetting: UILabel!
     @IBOutlet private weak var labelToShowLocateSetting: UILabel!
 
+    @IBOutlet private weak var labelToShowTheNumberOfKaeritai: UILabel!
+
     @IBOutlet private weak var buttonToLaboinAndCancel: UIButton!
     @IBOutlet private weak var buttonToLaborida: UIButton!
     @IBOutlet private weak var buttonToTweetKaeritai: UIButton!
@@ -26,6 +28,7 @@ class CCDMainViewController: UIViewController {
         buttonToTweetKaeritai.addTarget(self, action: "touchUpInsideButtonToTweetKaeritai:", forControlEvents: .TouchUpInside)
 
         setLabelToShowStatus(CCDSetting.sharedInstance().isInLabo())
+        setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +41,12 @@ class CCDMainViewController: UIViewController {
             labelToShowStatus.text = CCDMessage.sharedInstance().inLabo
         } else {
             labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
+        }
+    }
+
+    private func setLabelToShowTheNumberOfKaeritai(number: Int) {
+        if number >= 0 {
+            labelToShowTheNumberOfKaeritai.text = "\(number)"
         }
     }
 
@@ -63,5 +72,8 @@ class CCDMainViewController: UIViewController {
 
     func touchUpInsideButtonToTweetKaeritai(sender: UIButton) {
         println("touchUpInsideButtonToTweetKaeritai")
+        let kaeritaiCountModel = CCDKaeritaiCountModel()
+        kaeritaiCountModel.incrementCount()
+        setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
     }
 }
