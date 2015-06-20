@@ -16,8 +16,10 @@ class CCDSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib = UINib(nibName: "CCDSwitchTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: switchCellIdentifier)
+        let switchNib = UINib(nibName: "CCDSwitchTableViewCell", bundle: nil)
+        tableView.registerNib(switchNib, forCellReuseIdentifier: switchCellIdentifier)
+        let detailNib = UINib(nibName: "CCDDetailTableViewCell", bundle: nil)
+        tableView.registerNib(detailNib, forCellReuseIdentifier: detailCellIdentifier)
     }
 
     // MARK: - Table view data source
@@ -36,8 +38,8 @@ class CCDSettingTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier(switchCellIdentifier, forIndexPath: indexPath) as! CCDSwitchTableViewCell
             (cell as! CCDSwitchTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
-            cell.textLabel?.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
+            cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as! CCDDetailTableViewCell
+            (cell as! CCDDetailTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
         }
 
         return cell

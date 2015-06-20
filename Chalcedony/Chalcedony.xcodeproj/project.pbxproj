@@ -19,6 +19,8 @@
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 		B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */; };
 		B5B8A18D1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */; };
+		B5B8A1901B355D2F009CDCBC /* CCDDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8A18E1B355D2F009CDCBC /* CCDDetailTableViewCell.swift */; };
+		B5B8A1911B355D2F009CDCBC /* CCDDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8A18F1B355D2F009CDCBC /* CCDDetailTableViewCell.xib */; };
 		B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */; };
 		B5D118F81B350CEE000A9537 /* AboutApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D118F71B350CEE000A9537 /* AboutApp.txt */; };
 		B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FB1B353634000A9537 /* CCDSetting.swift */; };
@@ -59,6 +61,8 @@
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		B5B8A18E1B355D2F009CDCBC /* CCDDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B5B8A18F1B355D2F009CDCBC /* CCDDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDDetailTableViewCell.xib; sourceTree = "<group>"; };
 		B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableViewController.swift; sourceTree = "<group>"; };
 		B5D118F71B350CEE000A9537 /* AboutApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AboutApp.txt; sourceTree = "<group>"; };
 		B5D118FB1B353634000A9537 /* CCDSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSetting.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 			children = (
 				B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */,
 				B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */,
+				B5B8A18E1B355D2F009CDCBC /* CCDDetailTableViewCell.swift */,
+				B5B8A18F1B355D2F009CDCBC /* CCDDetailTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B8A18D1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib in Resources */,
+				B5B8A1911B355D2F009CDCBC /* CCDDetailTableViewCell.xib in Resources */,
 				B597DE951B343770002A7CC8 /* Main.storyboard in Resources */,
 				B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */,
 				B5D118F81B350CEE000A9537 /* AboutApp.txt in Resources */,
@@ -397,6 +404,7 @@
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
 				B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */,
+				B5B8A1901B355D2F009CDCBC /* CCDDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
