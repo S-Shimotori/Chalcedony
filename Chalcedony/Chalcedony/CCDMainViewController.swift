@@ -9,6 +9,14 @@
 import UIKit
 
 class CCDMainViewController: UIViewController {
+    @IBOutlet private weak var labelToShowStatus: UILabel!
+    @IBOutlet private weak var labelToShowHowLongStay: UILabel!
+    @IBOutlet private weak var labelToShowTwitterSetting: UILabel!
+    @IBOutlet private weak var labelToShowLocateSetting: UILabel!
+
+    @IBOutlet private weak var buttonToLaboinAndCancel: UIButton!
+    @IBOutlet private weak var buttonToLaborida: UIButton!
+    @IBOutlet private weak var buttonToTweetKaeritai: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

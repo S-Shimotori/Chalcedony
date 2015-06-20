@@ -388,6 +388,15 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="9eT-9g-2vD"/>
+                    <connections>
+                        <outlet property="buttonToLaboinAndCancel" destination="jYO-Es-HXX" id="rKa-h2-eXy"/>
+                        <outlet property="buttonToLaborida" destination="W6F-2i-Bgj" id="z5v-dV-poE"/>
+                        <outlet property="buttonToTweetKaeritai" destination="u5W-ov-eS7" id="B1r-H0-B1A"/>
+                        <outlet property="labelToShowHowLongStay" destination="xJo-RA-yUC" id="mLR-Ej-nAs"/>
+                        <outlet property="labelToShowLocateSetting" destination="TeA-yr-crw" id="VSu-wL-5IO"/>
+                        <outlet property="labelToShowStatus" destination="pet-cd-azI" id="DU6-Nt-T46"/>
+                        <outlet property="labelToShowTwitterSetting" destination="IPw-sx-vj1" id="9DN-c5-qQ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dF-hX-2EJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
