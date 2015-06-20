@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fWY-Sc-lN0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -438,20 +439,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="height" secondItem="04M-S3-QCM" secondAttribute="height" id="aGg-27-1am"/>
-                            <constraint firstAttribute="centerY" secondItem="6FH-Dn-8Bv" secondAttribute="centerY" id="c4t-Qb-RPp"/>
-                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="width" secondItem="04M-S3-QCM" secondAttribute="width" id="qX8-ik-9rX"/>
-                            <constraint firstAttribute="centerX" secondItem="6FH-Dn-8Bv" secondAttribute="centerX" id="tzl-Iv-UCs"/>
+                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="top" secondItem="MoO-ht-e9F" secondAttribute="bottom" id="IbA-1e-gbQ"/>
+                            <constraint firstItem="yGn-V0-Sdp" firstAttribute="top" secondItem="6FH-Dn-8Bv" secondAttribute="bottom" id="Rmc-2z-JO1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6FH-Dn-8Bv" secondAttribute="trailing" id="k6U-Pi-Tvk"/>
+                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="leading" secondItem="04M-S3-QCM" secondAttribute="leadingMargin" id="sDJ-fl-AaV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6FH-Dn-8Bv"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="aGg-27-1am"/>
-                                <exclude reference="c4t-Qb-RPp"/>
-                                <exclude reference="qX8-ik-9rX"/>
-                                <exclude reference="tzl-Iv-UCs"/>
+                                <exclude reference="IbA-1e-gbQ"/>
+                                <exclude reference="k6U-Pi-Tvk"/>
+                                <exclude reference="sDJ-fl-AaV"/>
+                                <exclude reference="Rmc-2z-JO1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -459,10 +460,10 @@
                                 <include reference="6FH-Dn-8Bv"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="aGg-27-1am"/>
-                                <include reference="c4t-Qb-RPp"/>
-                                <include reference="qX8-ik-9rX"/>
-                                <include reference="tzl-Iv-UCs"/>
+                                <include reference="IbA-1e-gbQ"/>
+                                <include reference="k6U-Pi-Tvk"/>
+                                <include reference="sDJ-fl-AaV"/>
+                                <include reference="Rmc-2z-JO1"/>
                             </mask>
                         </variation>
                     </view>
