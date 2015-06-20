@@ -10,26 +10,20 @@ import UIKit
 
 class CCDAboutAppViewController: UIViewController {
 
+    @IBOutlet private weak var textViewAboutApp: UITextView!
+    private let aboutAppText = "AboutApp"
+    private let aboutAppExtension = "txt"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let filePath = NSBundle.mainBundle().pathForResource(aboutAppText, ofType: aboutAppExtension)
+
+        if let filePath = filePath {
+            let stringFromFile = NSString(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)
+            if let stringFromFile = stringFromFile as? String {
+                textViewAboutApp.text = stringFromFile
+            }
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

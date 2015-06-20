@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fWY-Sc-lN0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -436,48 +435,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-Dn-8Bv" userLabel="textViewAboutApp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-Dn-8Bv" userLabel="textViewAboutApp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="72" width="368" height="528"/>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="top" secondItem="MoO-ht-e9F" secondAttribute="bottom" id="IbA-1e-gbQ"/>
-                            <constraint firstItem="yGn-V0-Sdp" firstAttribute="top" secondItem="6FH-Dn-8Bv" secondAttribute="bottom" id="Rmc-2z-JO1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6FH-Dn-8Bv" secondAttribute="trailing" id="k6U-Pi-Tvk"/>
-                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="leading" secondItem="04M-S3-QCM" secondAttribute="leadingMargin" id="sDJ-fl-AaV"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6FH-Dn-8Bv"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="IbA-1e-gbQ"/>
-                                <exclude reference="k6U-Pi-Tvk"/>
-                                <exclude reference="sDJ-fl-AaV"/>
-                                <exclude reference="Rmc-2z-JO1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="6FH-Dn-8Bv"/>
                             </mask>
-                            <mask key="constraints">
-                                <include reference="IbA-1e-gbQ"/>
-                                <include reference="k6U-Pi-Tvk"/>
-                                <include reference="sDJ-fl-AaV"/>
-                                <include reference="Rmc-2z-JO1"/>
-                            </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="textViewAboutApp" destination="6FH-Dn-8Bv" id="bTy-q5-lYc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhF-21-VWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733" y="1245"/>
+            <point key="canvasLocation" x="1732.5" y="1245"/>
         </scene>
     </scenes>
 </document>
