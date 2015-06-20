@@ -427,7 +427,44 @@
                     <view key="view" contentMode="scaleToFill" id="04M-S3-QCM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-Dn-8Bv" userLabel="textViewAboutApp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="height" secondItem="04M-S3-QCM" secondAttribute="height" id="aGg-27-1am"/>
+                            <constraint firstAttribute="centerY" secondItem="6FH-Dn-8Bv" secondAttribute="centerY" id="c4t-Qb-RPp"/>
+                            <constraint firstItem="6FH-Dn-8Bv" firstAttribute="width" secondItem="04M-S3-QCM" secondAttribute="width" id="qX8-ik-9rX"/>
+                            <constraint firstAttribute="centerX" secondItem="6FH-Dn-8Bv" secondAttribute="centerX" id="tzl-Iv-UCs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6FH-Dn-8Bv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aGg-27-1am"/>
+                                <exclude reference="c4t-Qb-RPp"/>
+                                <exclude reference="qX8-ik-9rX"/>
+                                <exclude reference="tzl-Iv-UCs"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6FH-Dn-8Bv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="aGg-27-1am"/>
+                                <include reference="c4t-Qb-RPp"/>
+                                <include reference="qX8-ik-9rX"/>
+                                <include reference="tzl-Iv-UCs"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhF-21-VWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
