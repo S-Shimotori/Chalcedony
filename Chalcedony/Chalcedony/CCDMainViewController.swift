@@ -24,6 +24,8 @@ class CCDMainViewController: UIViewController {
         buttonToLaboinAndCancel.addTarget(self, action: "touchUpInsideButtonToLaboinAndCancel:", forControlEvents: .TouchUpInside)
         buttonToLaborida.addTarget(self, action: "touchUpInsideButtonToLaborida:", forControlEvents: .TouchUpInside)
         buttonToTweetKaeritai.addTarget(self, action: "touchUpInsideButtonToTweetKaeritai:", forControlEvents: .TouchUpInside)
+
+        setLabelToShowStatus(CCDSetting.sharedInstance().isInLabo())
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +33,31 @@ class CCDMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func setLabelToShowStatus(inLabo: Bool) {
+        if inLabo {
+            labelToShowStatus.text = CCDMessage.sharedInstance().inLabo
+        } else {
+            labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
+        }
+    }
+
     func touchUpInsideButtonToLaboinAndCancel(sender: UIButton) {
         println("touchUpInsideButtonToLaboinAndCancel")
+        let entryModel = CCDEntryModel()
+        if !CCDSetting.sharedInstance().isInLabo() {
+            entryModel.laboin()
+            setLabelToShowStatus(true)
+        } else {
+            // TODO
+        }
     }
 
     func touchUpInsideButtonToLaborida(sender: UIButton) {
+        let entryModel = CCDEntryModel()
+        if CCDSetting.sharedInstance().isInLabo() {
+            entryModel.laborida()
+            setLabelToShowStatus(false)
+        }
         println("touchUpInsideButtonToLaborida")
     }
 

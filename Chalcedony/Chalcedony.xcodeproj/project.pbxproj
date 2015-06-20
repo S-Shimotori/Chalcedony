@@ -19,6 +19,9 @@
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 		B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */; };
 		B5D118F81B350CEE000A9537 /* AboutApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D118F71B350CEE000A9537 /* AboutApp.txt */; };
+		B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FB1B353634000A9537 /* CCDSetting.swift */; };
+		B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */; };
+		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
 		F8DAA0E0A83715D3851A83D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableViewController.swift; sourceTree = "<group>"; };
 		B5D118F71B350CEE000A9537 /* AboutApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AboutApp.txt; sourceTree = "<group>"; };
+		B5D118FB1B353634000A9537 /* CCDSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSetting.swift; sourceTree = "<group>"; };
+		B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryModel.swift; sourceTree = "<group>"; };
+		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +126,7 @@
 		B597DE8C1B343770002A7CC8 /* Chalcedony */ = {
 			isa = PBXGroup;
 			children = (
+				B5D118FA1B3535EA000A9537 /* Model */,
 				B5D118F61B350CD2000A9537 /* txt */,
 				B56D56231B345139008B18A8 /* ViewController */,
 				B597DE8F1B343770002A7CC8 /* AppDelegate.swift */,
@@ -172,6 +179,16 @@
 				B5D118F71B350CEE000A9537 /* AboutApp.txt */,
 			);
 			name = txt;
+			sourceTree = "<group>";
+		};
+		B5D118FA1B3535EA000A9537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5D118FB1B353634000A9537 /* CCDSetting.swift */,
+				B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */,
+				B5D118FF1B353AA4000A9537 /* CCDMessage.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		EA9B866CA9F6A68EF3AD9BE7 /* Frameworks */ = {
@@ -350,9 +367,12 @@
 			files = (
 				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
+				B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */,
+				B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */,
 				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
+				B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
