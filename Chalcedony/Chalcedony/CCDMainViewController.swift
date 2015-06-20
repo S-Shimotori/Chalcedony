@@ -21,23 +21,25 @@ class CCDMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        buttonToLaboinAndCancel.addTarget(self, action: "touchUpInsideButtonToLaboinAndCancel:", forControlEvents: .TouchUpInside)
+        buttonToLaborida.addTarget(self, action: "touchUpInsideButtonToLaborida:", forControlEvents: .TouchUpInside)
+        buttonToTweetKaeritai.addTarget(self, action: "touchUpInsideButtonToTweetKaeritai:", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func touchUpInsideButtonToLaboinAndCancel(sender: UIButton) {
+        println("touchUpInsideButtonToLaboinAndCancel")
     }
-    */
 
+    func touchUpInsideButtonToLaborida(sender: UIButton) {
+        println("touchUpInsideButtonToLaborida")
+    }
+
+    func touchUpInsideButtonToTweetKaeritai(sender: UIButton) {
+        println("touchUpInsideButtonToTweetKaeritai")
+    }
 }
