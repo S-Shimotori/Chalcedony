@@ -212,23 +212,52 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帰りたさカウント" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkm-T2-4Ck" userLabel="Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="帰りたさカウント" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkm-T2-4Ck" userLabel="Label">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="mBy-qP-wVZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mBy-qP-wVZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="mBy-qP-wVZ"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpU-Qb-Ymj" userLabel="labelToShowTheNumberOfKaeritai">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpU-Qb-Ymj" userLabel="labelToShowTheNumberOfKaeritai">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-4n-0ru" userLabel="Label">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="8Vf-2l-G6e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Vf-2l-G6e"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8Vf-2l-G6e"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qa-kX-blY" userLabel="buttonToDataView">
                                 <rect key="frame" x="10" y="420" width="580" height="50"/>
@@ -293,6 +322,7 @@
                             <constraint firstItem="jYO-Es-HXX" firstAttribute="height" secondItem="W6F-2i-Bgj" secondAttribute="height" id="Osa-Dp-7jE"/>
                             <constraint firstItem="i0k-y2-SLX" firstAttribute="top" secondItem="10i-Ko-4T2" secondAttribute="bottom" constant="5" id="T4h-5F-6g9"/>
                             <constraint firstAttribute="trailing" secondItem="gFy-4n-0ru" secondAttribute="trailing" constant="5" id="XSf-kT-a0X"/>
+                            <constraint firstItem="GpU-Qb-Ymj" firstAttribute="leading" secondItem="tkm-T2-4Ck" secondAttribute="trailing" constant="5" id="Xzn-lw-fTG"/>
                             <constraint firstItem="6n6-Kw-RKB" firstAttribute="top" secondItem="i0k-y2-SLX" secondAttribute="bottom" constant="5" id="a84-gm-dQ4"/>
                             <constraint firstAttribute="width" secondItem="2qa-kX-blY" secondAttribute="width" constant="10" id="b2i-um-iWu"/>
                             <constraint firstItem="dUJ-48-ivG" firstAttribute="top" secondItem="Wbr-bJ-dq0" secondAttribute="bottom" constant="5" id="bZW-iU-Emi"/>
@@ -323,6 +353,7 @@
                                 <exclude reference="Fvi-TU-opn"/>
                                 <exclude reference="yPz-RN-2Jx"/>
                                 <exclude reference="ycu-zU-Lbt"/>
+                                <exclude reference="Xzn-lw-fTG"/>
                                 <exclude reference="nBc-WU-vNe"/>
                                 <exclude reference="J3F-DY-YRo"/>
                                 <exclude reference="XSf-kT-a0X"/>
@@ -345,6 +376,7 @@
                                 <include reference="Fvi-TU-opn"/>
                                 <include reference="yPz-RN-2Jx"/>
                                 <include reference="ycu-zU-Lbt"/>
+                                <include reference="Xzn-lw-fTG"/>
                                 <include reference="nBc-WU-vNe"/>
                                 <include reference="J3F-DY-YRo"/>
                                 <include reference="XSf-kT-a0X"/>
