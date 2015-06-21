@@ -41,9 +41,6 @@ class CCDSettingTableViewController: UITableViewController {
         } else {
             cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as! CCDDetailTableViewCell
             (cell as! CCDDetailTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
-            if indexPath.section == 0 && indexPath.row == 1 {
-                (cell as! CCDDetailTableViewCell).labelToShowCurrentSetting.text = CCDSetting.sharedInstance().twitterId
-            }
         }
 
         cell.selectionStyle = .None
@@ -118,7 +115,7 @@ class CCDSettingTableViewController: UITableViewController {
     }
 
     func setTwitterId(cell: CCDDetailTableViewCell?) {
-        let twitterIdCell = cell ?? tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: NSIndexPath(forRow: 1, inSection: 0)) as! CCDDetailTableViewCell
+        let twitterIdCell = cell ?? tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: NSIndexPath(forRow: 1, inSection: 1)) as! CCDDetailTableViewCell
         if let twitterId = CCDSetting.sharedInstance().twitterId {
             twitterIdCell.labelToShowCurrentSetting.text = "@\(twitterId)"
         } else {
