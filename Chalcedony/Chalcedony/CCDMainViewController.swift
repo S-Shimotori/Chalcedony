@@ -16,6 +16,7 @@ class CCDMainViewController: UIViewController {
 
     @IBOutlet private weak var labelToShowTheNumberOfKaeritai: UILabel!
 
+
     @IBOutlet private weak var buttonToLaboinAndCancel: UIButton!
     @IBOutlet private weak var buttonToLaborida: UIButton!
     @IBOutlet private weak var buttonToTweetKaeritai: UIButton!
