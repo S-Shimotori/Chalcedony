@@ -45,9 +45,26 @@ class CCDSettingTableViewController: UITableViewController {
                 (cell as! CCDDetailTableViewCell).labelToShowCurrentSetting.text = CCDSetting.sharedInstance().twitterId
             }
         }
-        if indexPath.section == 0 && indexPath.row == 1 {
+
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
+            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 0
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+        case (0, 1):
             setTwitterId((cell as! CCDDetailTableViewCell))
+        case (1, 0):
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboridaChallenge
+            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 1
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+        case (2, 0):
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboLocate
+            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 2
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+        default:
+            break
         }
+
         return cell
     }
 
@@ -74,6 +91,27 @@ class CCDSettingTableViewController: UITableViewController {
         default:
             return
         }
+    }
+
+    func valueChangeSwitch(sender: UISwitch) {
+
+        switch sender.tag {
+        case 0:
+            if sender.on != CCDSetting.sharedInstance().useTwitter {
+                CCDSetting.sharedInstance().useTwitter = sender.on
+            }
+        case 1:
+            if sender.on != CCDSetting.sharedInstance().useLaboridaChallenge {
+                CCDSetting.sharedInstance().useLaboridaChallenge = sender.on
+            }
+        case 2:
+            if sender.on != CCDSetting.sharedInstance().useLaboLocate {
+                CCDSetting.sharedInstance().useLaboLocate = sender.on
+            }
+        default:
+            break
+        }
+
     }
 
     func setTwitterId(cell: CCDDetailTableViewCell?) {

@@ -60,4 +60,34 @@ class CCDSetting {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
+
+    var useTwitter: Bool {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("useTwitter")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useTwitter")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var useLaboridaChallenge: Bool {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("useLaboridaChallenge")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useLaboridaChallenge")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var useLaboLocate: Bool {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("useLaboLocate")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useLaboLocate")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
 }
