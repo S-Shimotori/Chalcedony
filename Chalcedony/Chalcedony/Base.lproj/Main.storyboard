@@ -469,7 +469,7 @@
         <!--About App View Controller-->
         <scene sceneID="g8m-cg-gmw">
             <objects>
-                <viewController id="pSY-Wy-q8B" customClass="CCDAboutAppViewController" customModule="Chalcedony" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pSY-Wy-q8B" customClass="CCDAboutAppViewController" customModule="Chalcedony" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MoO-ht-e9F"/>
                         <viewControllerLayoutGuide type="bottom" id="yGn-V0-Sdp"/>
