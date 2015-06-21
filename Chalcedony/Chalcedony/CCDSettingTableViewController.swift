@@ -26,10 +26,30 @@ class CCDSettingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return CCDSettingTableList.sharedInstance().settingTitleList.count
+        if CCDSetting.sharedInstance().useTwitter {
+            return CCDSettingTableList.sharedInstance().settingTitleList.count
+        } else {
+            return CCDSettingTableList.sharedInstance().settingTitleList.count - 1
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            if !CCDSetting.sharedInstance().useLaboLocate {
+                return 1
+            }
+        case 1:
+            if !CCDSetting.sharedInstance().useTwitter {
+                return 1
+            }
+        case 2:
+            if !CCDSetting.sharedInstance().useLaboridaChallenge {
+                return 1
+            }
+        default:
+            break
+        }
         return CCDSettingTableList.sharedInstance().settingList[section].count
     }
 
@@ -94,24 +114,53 @@ class CCDSettingTableViewController: UITableViewController {
 
     func valueChangedSwitch(sender: UISwitch) {
 
+        tableView.beginUpdates()
         switch sender.tag {
         case 0:
             if sender.on != CCDSetting.sharedInstance().useLaboLocate {
                 CCDSetting.sharedInstance().useLaboLocate = sender.on
-
+                var indexPaths = [NSIndexPath]()
+                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[0].count {
+                    indexPaths.append(NSIndexPath(forRow: 1, inSection: 0))
+                }
+                if sender.on == true {
+                    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                } else {
+                    tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                }
             }
         case 1:
             if sender.on != CCDSetting.sharedInstance().useTwitter {
                 CCDSetting.sharedInstance().useTwitter = sender.on
+                var indexPaths = [NSIndexPath]()
+                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[1].count {
+                    indexPaths.append(NSIndexPath(forRow: i, inSection: 1))
+                }
+                if sender.on == true {
+                    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                    tableView.insertSections(NSIndexSet(index: 2), withRowAnimation: .Fade)
+                } else {
+                    tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                    tableView.deleteSections(NSIndexSet(index: 2), withRowAnimation: .Fade)
+                }
             }
         case 2:
             if sender.on != CCDSetting.sharedInstance().useLaboridaChallenge {
                 CCDSetting.sharedInstance().useLaboridaChallenge = sender.on
+                var indexPaths = [NSIndexPath]()
+                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[2].count {
+                    indexPaths.append(NSIndexPath(forRow: i, inSection: 2))
+                }
+                if sender.on == true {
+                    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                } else {
+                    tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+                }
             }
         default:
             break
         }
-
+        tableView.endUpdates()
     }
 
     func setTwitterId(cell: CCDDetailTableViewCell?) {
