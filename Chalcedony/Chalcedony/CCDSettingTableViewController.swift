@@ -46,6 +46,8 @@ class CCDSettingTableViewController: UITableViewController {
             }
         }
 
+        cell.selectionStyle = .None
+
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
