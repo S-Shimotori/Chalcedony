@@ -5,11 +5,15 @@ class CCDSettingTableList {
         return _sharedInstance
     }
     let settingTitleList = [
+        "らぼ位置検知",
         "Twitter連携",
-        "らぼりだチャレンジ",
-        "らぼ位置検知"
+        "らぼりだチャレンジ"
     ]
     let settingList = [
+        [
+            "検知する",
+            "らぼの位置を設定..."
+        ],
         [
             "ツイートを行う",
             "アカウント",
@@ -20,16 +24,12 @@ class CCDSettingTableList {
         [
             "チャレンジする",
             "使用する名前"
-        ],
-        [
-            "検知する",
-            "らぼの位置を設定..."
         ]
     ]
 
     let settingListCellType:[[Type]] = [
-        [.Switch, .Detail, .Detail, .Detail, .Detail],
         [.Switch, .Detail],
+        [.Switch, .Detail, .Detail, .Detail, .Detail],
         [.Switch, .Detail]
     ]
     enum Type {

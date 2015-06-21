@@ -50,17 +50,17 @@ class CCDSettingTableViewController: UITableViewController {
 
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboLocate
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 0
             (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
-        case (0, 1):
-            setTwitterId((cell as! CCDDetailTableViewCell))
         case (1, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboridaChallenge
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 1
             (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
+        case (1, 1):
+            setTwitterId((cell as! CCDDetailTableViewCell))
         case (2, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboLocate
+            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboridaChallenge
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 2
             (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         default:
@@ -77,8 +77,6 @@ class CCDSettingTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 1):
-            let twitterModel = CCDTwitterModel()
-            twitterModel.login()
             return
         case (0, 2):
             return
@@ -87,6 +85,8 @@ class CCDSettingTableViewController: UITableViewController {
         case (0, 4):
             return
         case (1, 1):
+            let twitterModel = CCDTwitterModel()
+            twitterModel.login()
             return
         case (2, 1):
             return
@@ -99,16 +99,17 @@ class CCDSettingTableViewController: UITableViewController {
 
         switch sender.tag {
         case 0:
+            if sender.on != CCDSetting.sharedInstance().useLaboLocate {
+                CCDSetting.sharedInstance().useLaboLocate = sender.on
+
+            }
+        case 1:
             if sender.on != CCDSetting.sharedInstance().useTwitter {
                 CCDSetting.sharedInstance().useTwitter = sender.on
             }
-        case 1:
+        case 2:
             if sender.on != CCDSetting.sharedInstance().useLaboridaChallenge {
                 CCDSetting.sharedInstance().useLaboridaChallenge = sender.on
-            }
-        case 2:
-            if sender.on != CCDSetting.sharedInstance().useLaboLocate {
-                CCDSetting.sharedInstance().useLaboLocate = sender.on
             }
         default:
             break
