@@ -11,6 +11,7 @@ class CCDSetting {
         initialized = true
         lastEntranceDate = nil
         kaeritaiCount = 0
+        twitterId = nil
     }
 
     var initialized: Bool {
@@ -46,6 +47,16 @@ class CCDSetting {
         }
         set(newValue) {
             NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "kaeritaiCount")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var twitterId: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey("twitterId")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "twitterId")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }

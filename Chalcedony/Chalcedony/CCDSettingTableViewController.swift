@@ -12,6 +12,7 @@ class CCDSettingTableViewController: UITableViewController {
 
     private let switchCellIdentifier = "switchCell"
     private let detailCellIdentifier = "detailCell"
+    private var twitterId: String? = CCDSetting.sharedInstance().twitterId
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,13 @@ class CCDSettingTableViewController: UITableViewController {
         } else {
             cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as! CCDDetailTableViewCell
             (cell as! CCDDetailTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
+            if indexPath.section == 0 && indexPath.row == 1 {
+                (cell as! CCDDetailTableViewCell).labelToShowCurrentSetting.text = CCDSetting.sharedInstance().twitterId
+            }
         }
-
+        if indexPath.section == 0 && indexPath.row == 1 {
+            setTwitterId((cell as! CCDDetailTableViewCell))
+        }
         return cell
     }
 
@@ -49,4 +55,33 @@ class CCDSettingTableViewController: UITableViewController {
         return CCDSettingTableList.sharedInstance().settingTitleList[section]
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch (indexPath.section, indexPath.row) {
+        case (0, 1):
+            let twitterModel = CCDTwitterModel()
+            twitterModel.login()
+            return
+        case (0, 2):
+            return
+        case (0, 3):
+            return
+        case (0, 4):
+            return
+        case (1, 1):
+            return
+        case (2, 1):
+            return
+        default:
+            return
+        }
+    }
+
+    func setTwitterId(cell: CCDDetailTableViewCell?) {
+        let twitterIdCell = cell ?? tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: NSIndexPath(forRow: 1, inSection: 0)) as! CCDDetailTableViewCell
+        if let twitterId = CCDSetting.sharedInstance().twitterId {
+            twitterIdCell.labelToShowCurrentSetting.text = "@\(twitterId)"
+        } else {
+            twitterIdCell.labelToShowCurrentSetting.text = "設定なし"
+        }
+    }
 }
