@@ -12,6 +12,9 @@ class CCDSetting {
         lastEntranceDate = nil
         kaeritaiCount = 0
         twitterId = nil
+        messageToTweetLaboin = "らぼなう"
+        messageToTweetLaborida = "らぼりだ"
+        messageToTweetKaeritai = "研゛究゛室゛や゛だ゛ーーーーー！！！お゛う゛ち゛か゛え゛る゛ーーーーーーーーーー！！！！！！"
     }
 
     var initialized: Bool {
@@ -87,6 +90,36 @@ class CCDSetting {
         }
         set(newValue) {
             NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useLaboLocate")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var messageToTweetLaboin: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetLaboin")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetLaboin")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var messageToTweetLaborida: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetLaborida")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetLaborida")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+
+    var messageToTweetKaeritai: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetKaeritai")
+        }
+        set(newValue) {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetKaeritai")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
