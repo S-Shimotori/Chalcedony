@@ -50,17 +50,17 @@ class CCDSettingTableViewController: UITableViewController {
         case (0, 0):
             (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 0
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         case (0, 1):
             setTwitterId((cell as! CCDDetailTableViewCell))
         case (1, 0):
             (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboridaChallenge
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 1
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         case (2, 0):
             (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboLocate
             (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 2
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: ":", forControlEvents: .ValueChanged)
+            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         default:
             break
         }
@@ -93,7 +93,7 @@ class CCDSettingTableViewController: UITableViewController {
         }
     }
 
-    func valueChangeSwitch(sender: UISwitch) {
+    func valueChangedSwitch(sender: UISwitch) {
 
         switch sender.tag {
         case 0:
