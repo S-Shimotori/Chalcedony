@@ -9,14 +9,14 @@
 import UIKit
 
 class CCDAboutAppViewController: UIViewController {
-
+    private let pageTitle = "アプリについて"
     @IBOutlet private weak var textViewAboutApp: UITextView!
     private let aboutAppText = "AboutApp"
     private let aboutAppExtension = "txt"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = pageTitle
         let filePath = NSBundle.mainBundle().pathForResource(aboutAppText, ofType: aboutAppExtension)
 
         if let filePath = filePath {

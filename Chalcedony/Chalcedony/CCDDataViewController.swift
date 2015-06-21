@@ -9,9 +9,12 @@
 import UIKit
 
 class CCDDataViewController: UIViewController {
+    private let pageTitle = "データ"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = pageTitle
 
         // Do any additional setup after loading the view.
     }

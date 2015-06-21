@@ -9,14 +9,14 @@
 import UIKit
 
 class CCDSettingTableViewController: UITableViewController {
-
+    private let viewTitle = "設定"
     private let switchCellIdentifier = "switchCell"
     private let detailCellIdentifier = "detailCell"
     private var twitterId: String? = CCDSetting.sharedInstance().twitterId
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = viewTitle
         let switchNib = UINib(nibName: "CCDSwitchTableViewCell", bundle: nil)
         tableView.registerNib(switchNib, forCellReuseIdentifier: switchCellIdentifier)
         let detailNib = UINib(nibName: "CCDDetailTableViewCell", bundle: nil)
