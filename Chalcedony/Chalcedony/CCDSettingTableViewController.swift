@@ -14,22 +14,43 @@ class CCDSettingTableViewController: UITableViewController {
     private let detailCellIdentifier = "detailCell"
     private var twitterId: String? = CCDSetting.sharedInstance().twitterId
 
+    @IBOutlet private weak var switchToUseLaboLocate: UISwitch!
+    @IBOutlet private weak var switchToUseTwitter: UISwitch!
+    @IBOutlet private weak var labelToShowTwitterId: UILabel!
+    @IBOutlet private weak var labelForMessageToTweetLaboin: UILabel!
+    @IBOutlet private weak var labelForMessageToTweetLaborida: UILabel!
+    @IBOutlet private weak var labelForMessageToTweetKaeritai: UILabel!
+    @IBOutlet private weak var switchToUseLaboridaChallenge: UISwitch!
+    @IBOutlet private weak var labelForNameToTweet: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = viewTitle
-        let switchNib = UINib(nibName: "CCDSwitchTableViewCell", bundle: nil)
-        tableView.registerNib(switchNib, forCellReuseIdentifier: switchCellIdentifier)
-        let detailNib = UINib(nibName: "CCDDetailTableViewCell", bundle: nil)
-        tableView.registerNib(detailNib, forCellReuseIdentifier: detailCellIdentifier)
+        switchToUseLaboLocate.on = CCDSetting.sharedInstance().useLaboLocate
+        switchToUseTwitter.on = CCDSetting.sharedInstance().useTwitter
+        switchToUseLaboridaChallenge.on = CCDSetting.sharedInstance().useLaboridaChallenge
+        switchToUseLaboLocate.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
+        switchToUseTwitter.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
+        switchToUseLaboridaChallenge.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let twitterModel = CCDTwitterModel()
+        labelToShowTwitterId.text = twitterModel.userName ?? "未ログイン"
+        labelForMessageToTweetLaboin.text = CCDSetting.sharedInstance().messageToTweetLaboin
+        labelForMessageToTweetLaborida.text = CCDSetting.sharedInstance().messageToTweetLaborida
+        labelForMessageToTweetKaeritai.text = CCDSetting.sharedInstance().messageToTweetKaeritai
+        println("lddls")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if CCDSetting.sharedInstance().useTwitter {
-            return CCDSettingTableList.sharedInstance().settingTitleList.count
+            return 3
         } else {
-            return CCDSettingTableList.sharedInstance().settingTitleList.count - 1
+            return 2
         }
     }
 
@@ -54,61 +75,36 @@ class CCDSettingTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell
-        if indexPath.row == 0{
-            cell = tableView.dequeueReusableCellWithIdentifier(switchCellIdentifier, forIndexPath: indexPath) as! CCDSwitchTableViewCell
-            (cell as! CCDSwitchTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
-        } else {
-            cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as! CCDDetailTableViewCell
-            (cell as! CCDDetailTableViewCell).labelToSetting.text = CCDSettingTableList.sharedInstance().settingList[indexPath.section][indexPath.row]
-        }
-
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
         cell.selectionStyle = .None
-
         switch (indexPath.section, indexPath.row) {
-        case (0, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboLocate
-            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 0
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
-        case (1, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useTwitter
-            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 1
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         case (1, 1):
-            setTwitterId((cell as! CCDDetailTableViewCell))
-        case (2, 0):
-            (cell as! CCDSwitchTableViewCell).switchToSetting.on = CCDSetting.sharedInstance().useLaboridaChallenge
-            (cell as! CCDSwitchTableViewCell).switchToSetting.tag = 2
-            (cell as! CCDSwitchTableViewCell).switchToSetting.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
+            let twitterModel = CCDTwitterModel()
+            if twitterModel.userName != nil {
+                cell.accessoryType = UITableViewCellAccessoryType.None
+            }
         default:
             break
         }
-
         return cell
-    }
-
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return CCDSettingTableList.sharedInstance().settingTitleList[section]
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (0, 1):
-            return
         case (0, 2):
-            return
+            break
         case (0, 3):
-            return
+            break
         case (0, 4):
-            return
+            break
         case (1, 1):
             let twitterModel = CCDTwitterModel()
             twitterModel.login()
-            return
+            break
         case (2, 1):
-            return
+            break
         default:
-            return
+            break
         }
     }
 
@@ -161,14 +157,5 @@ class CCDSettingTableViewController: UITableViewController {
             break
         }
         tableView.endUpdates()
-    }
-
-    func setTwitterId(cell: CCDDetailTableViewCell?) {
-        let twitterIdCell = cell ?? tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: NSIndexPath(forRow: 1, inSection: 1)) as! CCDDetailTableViewCell
-        if let twitterId = CCDSetting.sharedInstance().twitterId {
-            twitterIdCell.labelToShowCurrentSetting.text = "@\(twitterId)"
-        } else {
-            twitterIdCell.labelToShowCurrentSetting.text = "設定なし"
-        }
     }
 }
