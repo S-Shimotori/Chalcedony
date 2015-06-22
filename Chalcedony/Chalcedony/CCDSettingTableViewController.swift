@@ -41,7 +41,6 @@ class CCDSettingTableViewController: UITableViewController {
         labelForMessageToTweetLaboin.text = CCDSetting.sharedInstance().messageToTweetLaboin
         labelForMessageToTweetLaborida.text = CCDSetting.sharedInstance().messageToTweetLaborida
         labelForMessageToTweetKaeritai.text = CCDSetting.sharedInstance().messageToTweetKaeritai
-        println("lddls")
     }
 
     // MARK: - Table view data source
