@@ -62,12 +62,62 @@ class CCDMainViewController: UIViewController {
     func touchUpInsideButtonToLaboinAndCancel(sender: UIButton) {
         println("touchUpInsideButtonToLaboinAndCancel")
         let entryModel = CCDEntryModel()
+
         if !CCDSetting.sharedInstance().isInLabo() {
-            entryModel.laboin()
-            setLabelToShowStatus(true)
+            //らぼいん処理
+
+            if CCDSetting.sharedInstance().useTwitter {
+                //TODO: ログインしてるかチェック
+
+                if let messageToTweetLaboin = CCDSetting.sharedInstance().messageToTweetLaboin {
+                    //らぼいんツイートの設定あり
+                    activityIndicatorView.startAnimating()
+                    let twitterModel = CCDTwitterModel()
+                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction("ツイート成功", message: "ツイートしました")
+                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
+                        message: "ツイート失敗しました\nツイートをせず入室の記録のみ行いますか?"){(action) in
+                        entryModel.laboin()
+                        self.setLabelToShowStatus(true)
+                    }
+                    let completionOnSuccess: () -> () = {
+                        entryModel.laboin()
+                        self.setLabelToShowStatus(true)
+                        showAlertOnSuccessFunction(nil)
+                        println(CCDSetting.sharedInstance().lastEntranceDate)
+                    }
+                    let completionOnFailure: (String) -> () = {(failureReason) in
+                        showAlertOnFailureFunction(failureReason)
+                    }
+                    twitterModel.tweet(messageToTweetLaboin,
+                        activityIndicatorView: activityIndicatorView,
+                        completionOnSuccess: completionOnSuccess,
+                        completionOnFailure: completionOnFailure)
+                } else {
+                    //ツイート文設定がnil
+                    let alertFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
+                        message: "ツイートをせず入室の記録のみ行いますか?"){(action) in
+                        entryModel.laboin()
+                        self.setLabelToShowStatus(true)
+                    }
+                    alertFunction("ツイート文が設定されていません")
+                }
+            } else {
+                //記録のみを行う
+                entryModel.laboin()
+                self.setLabelToShowStatus(true)
+            }
         } else {
-            // TODO
+            //取り消し
+            let alertFunction = makeShowAlertWithImplementionFunction("らぼいん取り消し",
+                message: "入室記録を取り消しますか?"){(action) in
+                    entryModel.cancel()
+                    self.setLabelToShowStatus(false)
+                    println(CCDSetting.sharedInstance().lastEntranceDate)
+            }
+            alertFunction(nil)
         }
+
+        println(CCDSetting.sharedInstance().lastEntranceDate)
     }
 
     func touchUpInsideButtonToLaborida(sender: UIButton) {
@@ -121,11 +171,17 @@ class CCDMainViewController: UIViewController {
         }
     }
 
-    private func makeShowAlertWithImplementionFunction(title: String, message: String, completion: ((UIAlertAction!) -> ())?) -> ((String)->()) {
+    private func makeShowAlertWithImplementionFunction(title: String, message: String, completion: ((UIAlertAction!) -> ())?) -> ((String?)->()) {
         let implementAlertAction = UIAlertAction(title: "はい", style: .Default, handler: completion)
         let cancelAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
         return {(failureReason) in
-            let alert = UIAlertController(title: title, message: "\(message)\n(エラー: \(failureReason))", preferredStyle: .Alert)
+            let bodyMessage: String
+            if let failureReason = failureReason {
+                bodyMessage = "\(message)\n(エラー: \(failureReason))"
+            } else {
+                bodyMessage = message
+            }
+            let alert = UIAlertController(title: title, message: bodyMessage, preferredStyle: .Alert)
             alert.addAction(implementAlertAction)
             alert.addAction(cancelAlertAction)
             self.presentViewController(alert, animated: true, completion: nil)
