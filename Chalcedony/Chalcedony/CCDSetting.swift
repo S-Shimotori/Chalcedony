@@ -37,7 +37,7 @@ class CCDSetting {
     }
 
     func isInLabo() -> Bool {
-        if let lastEntrance = lastEntranceDate {
+        if let lastEntranceDate = lastEntranceDate {
             return true
         } else {
             return false
