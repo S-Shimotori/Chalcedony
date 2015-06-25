@@ -123,8 +123,45 @@ class CCDMainViewController: UIViewController {
     func touchUpInsideButtonToLaborida(sender: UIButton) {
         let entryModel = CCDEntryModel()
         if CCDSetting.sharedInstance().isInLabo() {
-            entryModel.laborida()
-            setLabelToShowStatus(false)
+            if CCDSetting.sharedInstance().useTwitter {
+                if let messageToTweetLaborida = CCDSetting.sharedInstance().messageToTweetLaborida {
+                    //らぼりだツイートの設定あり
+                    activityIndicatorView.startAnimating()
+                    let twitterModel = CCDTwitterModel()
+                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction("ツイート成功", message: "ツイートしました")
+                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
+                        message: "ツイート失敗しました\nツイートをせず退室の記録のみ行いますか?"){(action) in
+                        entryModel.laborida()
+                        self.setLabelToShowStatus(false)
+                    }
+                    let completionOnSuccess: () -> () = {
+                        entryModel.laborida()
+                        self.setLabelToShowStatus(false)
+                        showAlertOnSuccessFunction(nil)
+                        println(CCDSetting.sharedInstance().lastEntranceDate)
+                    }
+                    let completionOnFailure: (String) -> () = {(failureReason) in
+                        showAlertOnFailureFunction(failureReason)
+                    }
+                    twitterModel.tweet(messageToTweetLaborida,
+                        activityIndicatorView: activityIndicatorView,
+                        completionOnSuccess: completionOnSuccess,
+                        completionOnFailure: completionOnFailure)
+                } else {
+                    //ツイート文設定がnil
+                    let alertFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
+                        message: "ツイートをせず退室の記録のみ行いますか?"){(action) in
+                        entryModel.laborida()
+                        self.setLabelToShowStatus(false)
+                    }
+                    alertFunction("ツイート文が設定されていません")
+                }
+            } else {
+                entryModel.laborida()
+                setLabelToShowStatus(false)
+            }
+        } else {
+
         }
         println("touchUpInsideButtonToLaborida")
     }
