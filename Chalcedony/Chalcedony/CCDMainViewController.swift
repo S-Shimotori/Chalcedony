@@ -48,8 +48,12 @@ class CCDMainViewController: UIViewController {
     private func setLabelToShowStatus(inLabo: Bool) {
         if inLabo {
             labelToShowStatus.text = CCDMessage.sharedInstance().inLabo
+            buttonToLaboinAndCancel.setImage(UIImage(named: "cancel.png"), forState: UIControlState.Normal)
+            buttonToLaboinAndCancel.backgroundColor = UIColor.cherryPinkColor()
         } else {
             labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
+            buttonToLaboinAndCancel.setImage(UIImage(named: "laboin.png"), forState: UIControlState.Normal)
+            buttonToLaboinAndCancel.backgroundColor = UIColor.ultramarineBlueColor()
         }
     }
 
