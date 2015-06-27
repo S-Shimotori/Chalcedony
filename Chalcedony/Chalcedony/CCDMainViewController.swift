@@ -43,6 +43,7 @@ class CCDMainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setLabelToShowLocateSetting()
+        setLabelToShowTwitterSetting()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +60,15 @@ class CCDMainViewController: UIViewController {
             labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
             buttonToLaboinAndCancel.setImage(UIImage(named: "laboin.png"), forState: UIControlState.Normal)
             buttonToLaboinAndCancel.backgroundColor = UIColor.ultramarineBlueColor()
+        }
+    }
+
+    private func setLabelToShowTwitterSetting() {
+        let twitterModel = CCDTwitterModel()
+        if let userName = twitterModel.userName {
+            labelToShowTwitterSetting.text = "@\(userName)"
+        } else {
+            labelToShowTwitterSetting.text = "未ログイン"
         }
     }
 

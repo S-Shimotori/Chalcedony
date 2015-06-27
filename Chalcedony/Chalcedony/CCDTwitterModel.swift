@@ -5,8 +5,8 @@ import UIKit
 class CCDTwitterModel {
     var userName: String? {
         get {
-            if TWTRUser().isVerified == true {
-                return TWTRUser().userID
+            if (Twitter.sharedInstance().session() != nil) {
+                return Twitter.sharedInstance().session().userName
             } else {
                 return nil
             }

@@ -37,7 +37,11 @@ class CCDSettingTableViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let twitterModel = CCDTwitterModel()
-        labelToShowTwitterId.text = twitterModel.userName ?? "未ログイン"
+        if let userName = twitterModel.userName {
+            labelToShowTwitterId.text = "@\(userName)"
+        } else {
+            labelToShowTwitterId.text = "未ログイン"
+        }
         labelForMessageToTweetLaboin.text = CCDSetting.sharedInstance().messageToTweetLaboin
         labelForMessageToTweetLaborida.text = CCDSetting.sharedInstance().messageToTweetLaborida
         labelForMessageToTweetKaeritai.text = CCDSetting.sharedInstance().messageToTweetKaeritai
