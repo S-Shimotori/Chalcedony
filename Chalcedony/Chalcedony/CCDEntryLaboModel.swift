@@ -1,5 +1,5 @@
 
-class CCDEntryModel {
+class CCDEntryLaboModel {
     func laboin() {
         CCDSetting.sharedInstance().lastEntranceDate = NSDate()
     }

@@ -38,7 +38,7 @@
 		B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */; };
 		B5D118F81B350CEE000A9537 /* AboutApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D118F71B350CEE000A9537 /* AboutApp.txt */; };
 		B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FB1B353634000A9537 /* CCDSetting.swift */; };
-		B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */; };
+		B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */; };
 		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
 		B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */; };
 		B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */; };
@@ -94,7 +94,7 @@
 		B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableViewController.swift; sourceTree = "<group>"; };
 		B5D118F71B350CEE000A9537 /* AboutApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AboutApp.txt; sourceTree = "<group>"; };
 		B5D118FB1B353634000A9537 /* CCDSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSetting.swift; sourceTree = "<group>"; };
-		B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryModel.swift; sourceTree = "<group>"; };
+		B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryLaboModel.swift; sourceTree = "<group>"; };
 		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
 		B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDKaeritaiCountModel.swift; sourceTree = "<group>"; };
 		B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableList.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D118FB1B353634000A9537 /* CCDSetting.swift */,
-				B5D118FD1B3538D0000A9537 /* CCDEntryModel.swift */,
+				B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */,
 				B5D118FF1B353AA4000A9537 /* CCDMessage.swift */,
 				B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */,
 				B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */,
@@ -475,7 +475,7 @@
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
-				B5D118FE1B3538D0000A9537 /* CCDEntryModel.swift in Sources */,
+				B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */,
 				B5B8A1901B355D2F009CDCBC /* CCDDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
