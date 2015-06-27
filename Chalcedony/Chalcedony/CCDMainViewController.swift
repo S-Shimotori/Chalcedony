@@ -30,7 +30,7 @@ class CCDMainViewController: UIViewController {
         buttonToLaborida.addTarget(self, action: "touchUpInsideButtonToLaborida:", forControlEvents: .TouchUpInside)
         buttonToTweetKaeritai.addTarget(self, action: "touchUpInsideButtonToTweetKaeritai:", forControlEvents: .TouchUpInside)
 
-        setLabelToShowStatus(CCDSetting.sharedInstance().isInLabo())
+        setUIToShowStatus(CCDSetting.sharedInstance().isInLabo())
         setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
 
         activityIndicatorView.frame = CGRectMake(0, 0, 50, 50)
@@ -50,7 +50,7 @@ class CCDMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private func setLabelToShowStatus(inLabo: Bool) {
+    private func setUIToShowStatus(inLabo: Bool) {
         if inLabo {
             labelToShowStatus.text = CCDMessage.sharedInstance().inLabo
             buttonToLaboinAndCancel.setImage(UIImage(named: "cancel.png"), forState: UIControlState.Normal)
@@ -94,11 +94,11 @@ class CCDMainViewController: UIViewController {
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
                         message: "ツイート失敗しました\nツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryModel.laboin()
-                        self.setLabelToShowStatus(true)
+                        self.setUIToShowStatus(true)
                     }
                     let completionOnSuccess: () -> () = {
                         entryModel.laboin()
-                        self.setLabelToShowStatus(true)
+                        self.setUIToShowStatus(true)
                         showAlertOnSuccessFunction(nil)
                         println(CCDSetting.sharedInstance().lastEntranceDate)
                     }
@@ -114,21 +114,21 @@ class CCDMainViewController: UIViewController {
                     let alertFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
                         message: "ツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryModel.laboin()
-                        self.setLabelToShowStatus(true)
+                        self.setUIToShowStatus(true)
                     }
                     alertFunction("ツイート文が設定されていません")
                 }
             } else {
                 //記録のみを行う
                 entryModel.laboin()
-                self.setLabelToShowStatus(true)
+                self.setUIToShowStatus(true)
             }
         } else {
             //取り消し
             let alertFunction = makeShowAlertWithImplementionFunction("らぼいん取り消し",
                 message: "入室記録を取り消しますか?"){(action) in
                     entryModel.cancel()
-                    self.setLabelToShowStatus(false)
+                    self.setUIToShowStatus(false)
                     println(CCDSetting.sharedInstance().lastEntranceDate)
             }
             alertFunction(nil)
@@ -149,11 +149,11 @@ class CCDMainViewController: UIViewController {
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
                         message: "ツイート失敗しました\nツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryModel.laborida()
-                        self.setLabelToShowStatus(false)
+                        self.setUIToShowStatus(false)
                     }
                     let completionOnSuccess: () -> () = {
                         entryModel.laborida()
-                        self.setLabelToShowStatus(false)
+                        self.setUIToShowStatus(false)
                         showAlertOnSuccessFunction(nil)
                         println(CCDSetting.sharedInstance().lastEntranceDate)
                     }
@@ -169,13 +169,13 @@ class CCDMainViewController: UIViewController {
                     let alertFunction = makeShowAlertWithImplementionFunction("ツイート失敗",
                         message: "ツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryModel.laborida()
-                        self.setLabelToShowStatus(false)
+                        self.setUIToShowStatus(false)
                     }
                     alertFunction("ツイート文が設定されていません")
                 }
             } else {
                 entryModel.laborida()
-                setLabelToShowStatus(false)
+                setUIToShowStatus(false)
             }
         } else {
 
