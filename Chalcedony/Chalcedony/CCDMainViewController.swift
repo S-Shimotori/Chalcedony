@@ -40,6 +40,11 @@ class CCDMainViewController: UIViewController {
         view.addSubview(activityIndicatorView)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setLabelToShowLocateSetting()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,6 +59,14 @@ class CCDMainViewController: UIViewController {
             labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
             buttonToLaboinAndCancel.setImage(UIImage(named: "laboin.png"), forState: UIControlState.Normal)
             buttonToLaboinAndCancel.backgroundColor = UIColor.ultramarineBlueColor()
+        }
+    }
+
+    private func setLabelToShowLocateSetting() {
+        if CCDSetting.sharedInstance().useLaboLocate {
+            labelToShowLocateSetting.text = "検知する"
+        } else {
+            labelToShowLocateSetting.text = "検知しない"
         }
     }
 
