@@ -102,7 +102,7 @@ class CCDMainViewController: UIViewController {
                     let twitterModel = CCDTwitterModel()
                     let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetSuccessTitle, message: CCDMessage.sharedInstance().doneTweet)
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "ツイート失敗しました\nツイートをせず入室の記録のみ行いますか?"){(action) in
+                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laboin()
                         self.setUIToShowStatus(true)
                     }
@@ -122,7 +122,7 @@ class CCDMainViewController: UIViewController {
                 } else {
                     //ツイート文設定がnil
                     let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "ツイートをせず入室の記録のみ行いますか?"){(action) in
+                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laboin()
                         self.setUIToShowStatus(true)
                     }
@@ -157,7 +157,7 @@ class CCDMainViewController: UIViewController {
                     let twitterModel = CCDTwitterModel()
                     let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetSuccessTitle, message: CCDMessage.sharedInstance().doneTweet)
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "ツイート失敗しました\nツイートをせず退室の記録のみ行いますか?"){(action) in
+                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laborida()
                         self.setUIToShowStatus(false)
                     }
@@ -177,7 +177,7 @@ class CCDMainViewController: UIViewController {
                 } else {
                     //ツイート文設定がnil
                     let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "ツイートをせず退室の記録のみ行いますか?"){(action) in
+                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laborida()
                         self.setUIToShowStatus(false)
                     }
@@ -216,7 +216,7 @@ class CCDMainViewController: UIViewController {
                 completionOnSuccess: completionOnSuccess,
                 completionOnFailure: completionOnFailure)
         } else {
-            makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetFailureTitle, message: "ツイート文が設定されていません")(nil)
+            makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetFailureTitle, message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイート文が設定されていません")(nil)
         }
     }
 
@@ -225,7 +225,7 @@ class CCDMainViewController: UIViewController {
         return {(failureReason) in
             let fullMessage: String
             if let failureReason = failureReason {
-                fullMessage = "\(message)\n(エラー: \(failureReason))"
+                fullMessage = "\(message)\n(\(CCDMessage.sharedInstance().error): \(failureReason))"
             } else {
                 fullMessage = message
             }
@@ -241,7 +241,7 @@ class CCDMainViewController: UIViewController {
         return {(failureReason) in
             let bodyMessage: String
             if let failureReason = failureReason {
-                bodyMessage = "\(message)\n(エラー: \(failureReason))"
+                bodyMessage = "\(message)\n(\(CCDMessage.sharedInstance().error): \(failureReason))"
             } else {
                 bodyMessage = message
             }

@@ -23,4 +23,5 @@ class CCDMessage {
     let yes = "はい"
     let close = "閉じる"
     let cancel = "キャンセル"
+    let error = "エラー"
 }
