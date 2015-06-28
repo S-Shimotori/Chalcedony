@@ -39,6 +39,18 @@ class ChalcedonyTests: XCTestCase {
         println(calculatedData.totalByMonth)
         println(calculatedData.totalByWeekday)
     }
+
+    private func makeNSDate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        components.hour = hour
+        components.month = month
+        components.second = second
+        return calendar.dateFromComponents(components)!
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
