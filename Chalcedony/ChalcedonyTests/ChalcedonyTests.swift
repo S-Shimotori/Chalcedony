@@ -79,7 +79,7 @@ class ChalcedonyTests: XCTestCase {
         components.month = month
         components.day = day
         components.hour = hour
-        components.month = month
+        components.minute = minute
         components.second = second
         return calendar.dateFromComponents(components)!
     }
