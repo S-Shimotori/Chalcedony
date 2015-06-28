@@ -90,8 +90,8 @@ class CCDDataModel {
                 //終了日になるまでカウント
                 while(date1.compare(laboridaDate) != .OrderedDescending) {
                     let howManySecondsStay = date1.timeIntervalSinceDate(date0)
-                    totalByWeekday[date0.date().weekday] += howManySecondsStay
-                    numberByWeekday[date0.date().weekday]++
+                    totalByWeekday[date0.date().weekday - 1] += howManySecondsStay
+                    numberByWeekday[date0.date().weekday - 1]++
                     totalByMonth[date0.date().month - 1] += howManySecondsStay
                     if date0.date().day == 1 {
                         numberByMonth[date0.date().month - 1]++
