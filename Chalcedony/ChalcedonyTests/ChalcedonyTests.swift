@@ -28,14 +28,46 @@ class ChalcedonyTests: XCTestCase {
 
     func testCCDDataModel() {
         let stayLaboDataList = [
-            CCDStayLaboData(laboinDate: NSDate(), laboridaDate: NSDate(timeIntervalSinceNow: NSTimeInterval(60 * 60 * 4)
-))
+            //日
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 0, minute: 0, second: 10)),
+            //月
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 22, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 22, hour: 0, minute: 10, second: 0)),
+            //火
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 23, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 23, hour: 10, minute: 0, second: 0)),
+            //水
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 24, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 24, hour: 0, minute: 10, second: 10)),
+            //木
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 25, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 25, hour: 10, minute: 0, second: 10)),
+            //金
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 26, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 26, hour: 10, minute: 10, second: 0)),
+            //土
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 27, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 27, hour: 10, minute: 10, second: 10)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[6 - 1], 40 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[0],    0        +  0      + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[1],    0        + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[2],   10 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[3],    0        + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[4],   10 * 3600 +  0      + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[5],   10 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],   10 * 3600 + 10 * 60 + 10, 1, "PASS")
 
-        println(calculatedData.numberByMonth)
-        println(calculatedData.numberByWeekday)
         println(calculatedData.totalByMonth)
         println(calculatedData.totalByWeekday)
     }
