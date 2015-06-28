@@ -121,16 +121,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5W-ov-eS7" userLabel="buttonToTweetKaeritai">
-                                <rect key="frame" x="5" y="287.5" width="590" height="78.5"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5W-ov-eS7" userLabel="buttonToTweetKaeritai">
+                                <rect key="frame" x="5" y="287" width="590" height="78.5"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.32549019610000002" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="kaeritai.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帰りたさカウント" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuL-Rb-z2a">
-                                <rect key="frame" x="5" y="371" width="72" height="12"/>
+                                <rect key="frame" x="5" y="370" width="72" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="nsg-AK-Zhn"/>
                                 </constraints>
@@ -139,13 +139,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIB-I0-UbV" userLabel="labelToShowTheNumberOfKaeritai">
-                                <rect key="frame" x="82" y="371" width="498" height="12"/>
+                                <rect key="frame" x="82" y="370" width="498" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEB-ED-KrD">
-                                <rect key="frame" x="585" y="371" width="10" height="12"/>
+                                <rect key="frame" x="585" y="370" width="10" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="hFh-Or-I3g"/>
                                 </constraints>
@@ -165,7 +165,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10i-Ko-4T2" userLabel="buttonToSettingView">
-                                <rect key="frame" x="5" y="485" width="590" height="52.5"/>
+                                <rect key="frame" x="5" y="485.5" width="590" height="52.5"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.32549019610000002" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="setting view">
@@ -719,6 +719,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kaeritai.png" width="450" height="150"/>
         <image name="laborida.png" width="100" height="100"/>
     </resources>
 </document>
