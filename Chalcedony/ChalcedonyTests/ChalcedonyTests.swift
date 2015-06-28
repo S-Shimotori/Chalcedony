@@ -26,7 +26,7 @@ class ChalcedonyTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
 
-    func testCCDDataModel() {
+    func testCCDDataModelWithSameDate() {
         let stayLaboDataList = [
             //日
             CCDStayLaboData(
@@ -69,6 +69,42 @@ class ChalcedonyTests: XCTestCase {
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],   10 * 3600 + 10 * 60 + 10, 1, "PASS")
         XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
         XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 1, 1, 1], "PASS")
+
+        println(calculatedData.totalByMonth)
+        println(calculatedData.totalByWeekday)
+    }
+
+    func testCCDDataModelWithExtendDate() {
+        let stayLaboDataList = [
+            //日
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 22, hour: 0, minute: 0, second: 10)),
+            //火
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 23, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 24, hour: 0, minute: 10, second: 0)),
+            //木
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 25, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 26, hour: 10, minute: 0, second: 10)),
+            //土
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 27, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 28, hour: 10, minute: 10, second: 10)),
+        ]
+        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
+        let calculatedData = dataModel.calculateStayLaboData()
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[6 - 1],116 * 3600 + 20 * 60 + 30, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[0],   34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[1],    0        +  0      + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[2],   24 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[3],    0        + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[4],   24 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[5],   10 * 3600 +  0      + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],   24 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1], "PASS")
 
         println(calculatedData.totalByMonth)
         println(calculatedData.totalByWeekday)
