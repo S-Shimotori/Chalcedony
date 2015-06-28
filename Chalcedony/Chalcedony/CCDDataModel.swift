@@ -71,10 +71,10 @@ class CCDDataModel {
 
             //らぼいんとりだが同じ日
             if laboinDate.isEqualToDate(laboridaDate) {
-                let howManyHoursStay = laboridaDate.timeIntervalSinceDate(laboinDate) / 3600
-                totalByWeekday[laboinDate.date().weekday - 1] += howManyHoursStay
+                let howManySecondsStay = laboridaDate.timeIntervalSinceDate(laboinDate)
+                totalByWeekday[laboinDate.date().weekday - 1] += howManySecondsStay
                 numberByWeekday[laboinDate.date().weekday - 1]++
-                totalByMonth[laboinDate.date().month - 1] += howManyHoursStay
+                totalByMonth[laboinDate.date().month - 1] += howManySecondsStay
                 if laboinDate.date().day == 1 {
                     numberByMonth[laboinDate.date().month - 1]++
                 }
@@ -89,10 +89,10 @@ class CCDDataModel {
                 var date1 = calendar.dateFromComponents(components)!
                 //終了日になるまでカウント
                 while(date1.compare(laboridaDate) != .OrderedDescending) {
-                    let howManyHoursStay = date1.timeIntervalSinceDate(date0) / 3600
-                    totalByWeekday[date0.date().weekday] += howManyHoursStay
+                    let howManySecondsStay = date1.timeIntervalSinceDate(date0)
+                    totalByWeekday[date0.date().weekday] += howManySecondsStay
                     numberByWeekday[date0.date().weekday]++
-                    totalByMonth[date0.date().month - 1] += howManyHoursStay
+                    totalByMonth[date0.date().month - 1] += howManySecondsStay
                     if date0.date().day == 1 {
                         numberByMonth[date0.date().month - 1]++
                     }
@@ -106,10 +106,10 @@ class CCDDataModel {
                     date1 = calendar.dateFromComponents(components)!
                 }
                 //終了日の時刻計算
-                let howManyHoursStay = laboridaDate.timeIntervalSinceDate(date0) / 3600
-                totalByWeekday[laboridaDate.date().weekday - 1] += howManyHoursStay
+                let howManySecondsStay = laboridaDate.timeIntervalSinceDate(date0)
+                totalByWeekday[laboridaDate.date().weekday - 1] += howManySecondsStay
                 numberByWeekday[laboridaDate.date().weekday - 1]++
-                totalByMonth[laboridaDate.date().month - 1] += howManyHoursStay
+                totalByMonth[laboridaDate.date().month - 1] += howManySecondsStay
                 if laboridaDate.date().day == 1 {
                     numberByMonth[laboridaDate.date().month - 1]++
                 }
