@@ -25,6 +25,20 @@ class ChalcedonyTests: XCTestCase {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }
+
+    func testCCDDataModel() {
+        let stayLaboDataList = [
+            CCDStayLaboData(laboinDate: NSDate(), laboridaDate: NSDate(timeIntervalSinceNow: NSTimeInterval(60 * 60 * 4)
+))
+        ]
+        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
+        let calculatedData = dataModel.calculateStayLaboData()
+
+        println(calculatedData.numberByMonth)
+        println(calculatedData.numberByWeekday)
+        println(calculatedData.totalByMonth)
+        println(calculatedData.totalByWeekday)
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

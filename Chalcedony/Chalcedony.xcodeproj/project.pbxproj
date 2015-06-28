@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
 		B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
+		B538B3031B3FCEB700F13CF5 /* CCDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6E01B3FA87D00518849 /* CCDDataModel.swift */; };
+		B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
+		B538B3051B3FCF3500F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
+		B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6DE1B3FA33700518849 /* NSDate+extension.swift */; };
 		B549B1341B3599CC00EDA51C /* CCDTwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */; };
 		B549B1381B359B9F00EDA51C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B549B1351B359B9F00EDA51C /* TwitterKit.framework */; };
 		B549B1391B359B9F00EDA51C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B549B1361B359B9F00EDA51C /* TwitterKitResources.bundle */; };
@@ -512,6 +516,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B538B3051B3FCF3500F13CF5 /* CCDCalculatedData.swift in Sources */,
+				B538B3031B3FCEB700F13CF5 /* CCDDataModel.swift in Sources */,
+				B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */,
+				B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */,
 				B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
