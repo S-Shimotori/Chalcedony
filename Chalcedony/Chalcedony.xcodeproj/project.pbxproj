@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
+		B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
 		B549B1341B3599CC00EDA51C /* CCDTwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */; };
 		B549B1381B359B9F00EDA51C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B549B1351B359B9F00EDA51C /* TwitterKit.framework */; };
 		B549B1391B359B9F00EDA51C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B549B1361B359B9F00EDA51C /* TwitterKitResources.bundle */; };
@@ -15,6 +17,7 @@
 		B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */; };
 		B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */; };
 		B584E6DF1B3FA33700518849 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6DE1B3FA33700518849 /* NSDate+extension.swift */; };
+		B584E6E11B3FA87D00518849 /* CCDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6E01B3FA87D00518849 /* CCDDataModel.swift */; };
 		B59475281B3D941600ADCEF3 /* laboin.png in Resources */ = {isa = PBXBuildFile; fileRef = B59475251B3D941600ADCEF3 /* laboin.png */; };
 		B59475291B3D941600ADCEF3 /* laboin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B59475261B3D941600ADCEF3 /* laboin@2x.png */; };
 		B594752A1B3D941600ADCEF3 /* laboin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B59475271B3D941600ADCEF3 /* laboin@3x.png */; };
@@ -62,6 +65,8 @@
 /* Begin PBXFileReference section */
 		7663B3EB7192199B7404B85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboData.swift; sourceTree = "<group>"; };
+		B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDCalculatedData.swift; sourceTree = "<group>"; };
 		B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDTwitterModel.swift; sourceTree = "<group>"; };
 		B549B1351B359B9F00EDA51C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		B549B1361B359B9F00EDA51C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDataViewController.swift; sourceTree = "<group>"; };
 		B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDAboutAppViewController.swift; sourceTree = "<group>"; };
 		B584E6DE1B3FA33700518849 /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
+		B584E6E01B3FA87D00518849 /* CCDDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDataModel.swift; sourceTree = "<group>"; };
 		B59475251B3D941600ADCEF3 /* laboin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laboin.png; sourceTree = "<group>"; };
 		B59475261B3D941600ADCEF3 /* laboin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laboin@2x.png"; sourceTree = "<group>"; };
 		B59475271B3D941600ADCEF3 /* laboin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laboin@3x.png"; sourceTree = "<group>"; };
@@ -285,6 +291,9 @@
 				B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */,
 				B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */,
 				B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */,
+				B584E6E01B3FA87D00518849 /* CCDDataModel.swift */,
+				B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */,
+				B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 			files = (
 				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
 				B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */,
+				B584E6E11B3FA87D00518849 /* CCDDataModel.swift in Sources */,
 				B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */,
 				B5C099561B3D9AA3008A1EEE /* UIColor+extension.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
@@ -488,6 +498,8 @@
 				B584E6DF1B3FA33700518849 /* NSDate+extension.swift in Sources */,
 				B549B1341B3599CC00EDA51C /* CCDTwitterModel.swift in Sources */,
 				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
+				B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */,
+				B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */,
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
