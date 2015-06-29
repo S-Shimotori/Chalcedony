@@ -31,6 +31,11 @@ class CCDDataModel {
 
         var lastLaboridaDate: NSDate?
         for stayLaboData in sortedStayLaboDataList {
+            //らぼりだ時間が前データらぼりだ時間と同じかそれより前なら
+            if let lastLaboridaDate = lastLaboridaDate where stayLaboData.laboridaDate.compare(lastLaboridaDate) != .OrderedDescending {
+                continue
+            }
+
             //らぼいん時間が前データらぼりだ時間より前なら
             let laboridaDate = stayLaboData.laboridaDate
             let laboinDate: NSDate
