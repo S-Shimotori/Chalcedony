@@ -26,7 +26,7 @@ class ChalcedonyTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
 
-    func testCCDDataModelWithSameDate() {
+    func testCCDDataModel() {
         let stayLaboDataList = [
             //日
             CCDStayLaboData(
@@ -194,6 +194,87 @@ class ChalcedonyTests: XCTestCase {
         println(calculatedData.totalByMonth)
         println(calculatedData.totalByWeekday)
     }
+
+    func testCCDDataModelWithRedundantData() {
+        let stayLaboDataList = [
+            //日
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 9, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 17, minute: 0, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 10, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 12, minute: 0, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 11, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 13, minute: 0, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 14, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 16, minute: 0, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 16, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 17, minute: 0, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 17, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 18, minute: 0, second: 0)),
+        ]
+        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
+        let calculatedData = dataModel.calculateStayLaboData()
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[6 - 1],  9 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[0],    9 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[1],    0        +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[2],    0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[3],    0        +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[4],    0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[5],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 0, 0, 0, 0, 0, 0], "PASS")
+
+        println(calculatedData.totalByMonth)
+        println(calculatedData.totalByWeekday)
+    }
+
+    func testCCDDataModelWithSameDate() {
+        let stayLaboDataList = [
+            //日
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 0, minute: 0, second: 10)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 21, hour: 1, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 21, hour: 1, minute: 0, second: 10)),
+            //月
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 22, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 22, hour: 0, minute: 10, second: 0)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 22, hour: 1, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 22, hour: 1, minute: 10, second: 0)),
+            //水
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 24, hour: 0, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 24, hour: 0, minute: 10, second: 10)),
+            CCDStayLaboData(
+                laboinDate: makeNSDate(2015, month: 6, day: 24, hour: 1, minute: 0, second: 0),
+                laboridaDate: makeNSDate(2015, month: 6, day: 24, hour: 1, minute: 10, second: 10)),
+        ]
+        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
+        let calculatedData = dataModel.calculateStayLaboData()
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[6 - 1],  0 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[0],    0        +  0      + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[1],    0        + 20 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[2],    0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[3],    0        + 20 * 60 + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[4],    0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[5],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 0, 1, 0, 0, 0], "PASS")
+
+        println(calculatedData.totalByMonth)
+        println(calculatedData.totalByWeekday)
+    }
+
 
     private func makeNSDate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
