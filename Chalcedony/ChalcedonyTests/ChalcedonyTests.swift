@@ -269,7 +269,7 @@ class ChalcedonyTests: XCTestCase {
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[5],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[6],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
         XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 0, 1, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 0, 0, 0], "PASS")
 
         println(calculatedData.totalByMonth)
         println(calculatedData.totalByWeekday)
