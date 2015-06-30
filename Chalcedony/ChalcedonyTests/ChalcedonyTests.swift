@@ -20,259 +20,236 @@ class ChalcedonyTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
 
     func testCCDDataModel() {
         let stayLaboDataList = [
-            //日
+            //Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 10)),
-            //月
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second: 10)),
+            //Monday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 10, second: 0)),
-            //火
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute: 10, second:  0)),
+            //Tuesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 10, minute: 0, second: 0)),
-            //水
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 23, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 23, hour: 10, minute:  0, second:  0)),
+            //Wednesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 10, second: 10)),
-            //木
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute: 10, second: 10)),
+            //Thursday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 10, minute: 0, second: 10)),
-            //金
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 25, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 25, hour: 10, minute:  0, second: 10)),
+            //Friday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 10, minute: 10, second: 0)),
-            //土
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 26, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 26, hour: 10, minute: 10, second:  0)),
+            //Saturday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 10, minute: 10, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 27, hour: 10, minute: 10, second: 10)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue], 40 * 3600 + 40 * 60 + 40, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    0        +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    0        + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   10 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],    0        + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   10 * 3600 +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],   10 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],           40 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    10 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 + 10 * 60 +  0, 1, "PASS")
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   10 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 1, 1, 1], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
     func testCCDDataModelWithExtendDate() {
         let stayLaboDataList = [
-            //日
+            //Sunday -> Monday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 10)),
-            //火
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second: 10)),
+            //Tuesday -> Wednesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 10, second: 0)),
-            //木
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 23, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute: 10, second:  0)),
+            //Thursday -> Friday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 10, minute: 0, second: 10)),
-            //土
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 25, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 26, hour: 10, minute:  0, second: 10)),
+            //Saturday -> Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 28, hour: 10, minute: 10, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 28, hour: 10, minute: 10, second: 10)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],116 * 3600 + 20 * 60 + 30, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],   34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    0        +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],    0        + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],   10 * 3600 +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
     func testCCDDataModelWithReverse() {
         let stayLaboDataList = [
-            //土
+            //Saturday -> Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 28, hour: 10, minute: 10, second: 10)),
-            //木
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 28, hour: 10, minute: 10, second: 10)),
+            //Thursday -> Friday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 10, minute: 0, second: 10)),
-            //火
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 25, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 26, hour: 10, minute:  0, second: 10)),
+            //Tuesday -> Wednesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 10, second: 0)),
-            //日
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 23, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute: 10, second:  0)),
+            //Sunday -> Monday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second: 10)),
 
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],116 * 3600 + 20 * 60 + 30, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],   34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    0        +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],    0        + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],   10 * 3600 +  0      + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
     func testCCDDataModelWithDuplicate() {
         let stayLaboDataList = [
-            //日
+            //Sunday -> Monday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 10)),
-            //月
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second: 10)),
+            //Monday -> Tuesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 0, minute: 10, second: 0)),
-            //火
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 23, hour:  0, minute: 10, second:  0)),
+            //Tuesday -> Wednesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 23, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 10, minute: 0, second: 0)),
-            //水
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 23, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour: 10, minute:  0, second:  0)),
+            //Wednesday -> Thursday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 0, minute: 10, second: 10)),
-            //木
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 25, hour:  0, minute: 10, second: 10)),
+            //Thursday -> Friday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 25, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 10, minute: 0, second: 10)),
-            //金
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 25, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 26, hour: 10, minute:  0, second: 10)),
+            //Friday -> Saturday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 26, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 10, minute: 10, second: 0)),
-            //土
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 26, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 27, hour: 10, minute: 10, second:  0)),
+            //Saturday -> Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 27, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 28, hour: 10, minute: 10, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 28, hour: 10, minute: 10, second: 10)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],178 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],   34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],         178 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue], 24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
     func testCCDDataModelWithRedundantData() {
         let stayLaboDataList = [
-            //日
+            //Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 9, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 17, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  9, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 17, minute:  0, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 10, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 12, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 10, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 12, minute:  0, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 11, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 13, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 11, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 13, minute:  0, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 14, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 16, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 14, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 16, minute:  0, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 16, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 17, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 16, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 17, minute:  0, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 17, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 18, minute: 0, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 17, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 18, minute:  0, second:  0)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],  9 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    9 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    0        +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],    0        +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],            9 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      9 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 +  0 * 60 +  0, 1, "PASS")
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 0, 0, 0, 0, 0, 0], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 0, 0, 0, 0, 0, 0]               , "PASS")
     }
 
     func testCCDDataModelWithSameDate() {
         let stayLaboDataList = [
-            //日
+            //Sunday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 0, minute: 0, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  0, minute:  0, second: 10)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 1, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 21, hour: 1, minute: 0, second: 10)),
-            //月
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  1, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour:  1, minute:  0, second: 10)),
+            //Monday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 0, minute: 10, second: 0)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute: 10, second:  0)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 1, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 22, hour: 1, minute: 10, second: 0)),
-            //水
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  1, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  1, minute: 10, second:  0)),
+            //Wednesday
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 0, minute: 10, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  0, minute: 10, second: 10)),
             CCDStayLaboData(
-                laboinDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 1, minute: 0, second: 0),
-                laboridaDate: makeNSDate(2015, month: CCDMonth.June, day: 24, hour: 1, minute: 10, second: 10)),
+                laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  1, minute:  0, second:  0),
+                laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  1, minute: 10, second: 10)),
         ]
         let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
         let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],  0 * 3600 + 40 * 60 + 40, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    0        +  0      + 20, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    0        + 20 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],    0        + 20 * 60 + 20, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],            0 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 20 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 20 * 60 + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
         XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 0, 0, 0], "PASS")
-
-        println(calculatedData.totalByMonth)
-        println(calculatedData.totalByWeekday)
+        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 0, 0, 0]               , "PASS")
     }
 
 
