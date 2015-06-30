@@ -9,10 +9,10 @@
 import UIKit
 
 extension NSDate {
-    func date() -> (year: Int, month: Int, day: Int, weekday: Int) {
+    func date() -> (year: Int, month: CCDMonth, day: Int, weekday: CCDWeekday) {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
-        return (components.year, components.month, components.day, components.weekday)
+        return (components.year, CCDMonth(rawValue: components.month)!, components.day, CCDWeekday(rawValue: components.weekday)!)
     }
     func time() -> (hour: Int, minute: Int, second: Int) {
         let calendar = NSCalendar.currentCalendar()
@@ -36,9 +36,9 @@ extension NSDate {
         } else if selfDate.year < otherDate.year {
             return false
         }
-        if selfDate.month > otherDate.month {
+        if selfDate.month.hashValue > otherDate.month.hashValue {
             return true
-        } else if selfDate.month < otherDate.month {
+        } else if selfDate.month.hashValue < otherDate.month.hashValue {
             return false
         }
         if selfDate.day > otherDate.day {
@@ -55,9 +55,9 @@ extension NSDate {
         } else if selfDate.year > otherDate.year {
             return false
         }
-        if selfDate.month < otherDate.month {
+        if selfDate.month.hashValue < otherDate.month.hashValue {
             return true
-        } else if selfDate.month > otherDate.month {
+        } else if selfDate.month.hashValue > otherDate.month.hashValue {
             return false
         }
         if selfDate.day < otherDate.day {

@@ -55,10 +55,10 @@ class CCDDataModel {
                 //同じ日になるまでカウント
                 while dayAfterLastLaboridaDate.isAscendingWithoutTime(laboinDate) {
                     //曜日カウント
-                    numberByWeekday[dayAfterLastLaboridaDate.date().weekday - 1]++
+                    numberByWeekday[dayAfterLastLaboridaDate.date().weekday.hashValue]++
                     //月代わりに月カウント
                     if dayAfterLastLaboridaDate.date().day == 1 {
-                        numberByMonth[dayAfterLastLaboridaDate.date().month - 1]++
+                        numberByMonth[dayAfterLastLaboridaDate.date().month.hashValue]++
                     }
 
                     //次の日へ
@@ -70,25 +70,25 @@ class CCDDataModel {
             } else {
                 //月母数カウント
                 if laboinDate.date().day != 1 {
-                    numberByMonth[laboinDate.date().month - 1]++
+                    numberByMonth[laboinDate.date().month.hashValue]++
                 }
             }
 
             //らぼいんとりだが同じ日
             if laboinDate.isEqualWithoutTime(laboridaDate) {
                 let howManySecondsStay = laboridaDate.timeIntervalSinceDate(laboinDate)
-                totalByWeekday[laboinDate.date().weekday - 1] += howManySecondsStay
-                totalByMonth[laboinDate.date().month - 1] += howManySecondsStay
+                totalByWeekday[laboinDate.date().weekday.hashValue] += howManySecondsStay
+                totalByMonth[laboinDate.date().month.hashValue] += howManySecondsStay
 
                 if let lastLaboridaDate = lastLaboridaDate where !laboinDate.isEqualWithoutTime(lastLaboridaDate) {
-                    numberByWeekday[laboinDate.date().weekday - 1]++
+                    numberByWeekday[laboinDate.date().weekday.hashValue]++
                     if laboinDate.date().day == 1 {
-                        numberByMonth[laboinDate.date().month - 1]++
+                        numberByMonth[laboinDate.date().month.hashValue]++
                     }
                 } else if lastLaboridaDate == nil {
-                    numberByWeekday[laboinDate.date().weekday - 1]++
+                    numberByWeekday[laboinDate.date().weekday.hashValue]++
                     if laboinDate.date().day == 1 {
-                        numberByMonth[laboinDate.date().month - 1]++
+                        numberByMonth[laboinDate.date().month.hashValue]++
                     }
                 }
             } else {
@@ -103,15 +103,15 @@ class CCDDataModel {
                 //終了日になるまでカウント
                 while !date1.isDescendingWithoutTime(laboridaDate) {
                     let howManySecondsStay = date1.timeIntervalSinceDate(date0)
-                    totalByWeekday[date0.date().weekday - 1] += howManySecondsStay
+                    totalByWeekday[date0.date().weekday.hashValue] += howManySecondsStay
                     if let lastLaboridaDate = lastLaboridaDate where !date0.isEqualWithoutTime(lastLaboridaDate) {
-                        numberByWeekday[date0.date().weekday - 1]++
+                        numberByWeekday[date0.date().weekday.hashValue]++
                     } else if lastLaboridaDate == nil {
-                        numberByWeekday[date0.date().weekday - 1]++
+                        numberByWeekday[date0.date().weekday.hashValue]++
                     }
-                    totalByMonth[date0.date().month - 1] += howManySecondsStay
+                    totalByMonth[date0.date().month.hashValue] += howManySecondsStay
                     if date0.date().day == 1 {
-                        numberByMonth[date0.date().month - 1]++
+                        numberByMonth[date0.date().month.hashValue]++
                     }
 
                     components = calendar.components(unitFlags, fromDate: date1)
@@ -124,11 +124,11 @@ class CCDDataModel {
                 }
                 //終了日の時刻計算
                 let howManySecondsStay = laboridaDate.timeIntervalSinceDate(date0)
-                totalByWeekday[laboridaDate.date().weekday - 1] += howManySecondsStay
-                numberByWeekday[laboridaDate.date().weekday - 1]++
-                totalByMonth[laboridaDate.date().month - 1] += howManySecondsStay
+                totalByWeekday[laboridaDate.date().weekday.hashValue] += howManySecondsStay
+                numberByWeekday[laboridaDate.date().weekday.hashValue]++
+                totalByMonth[laboridaDate.date().month.hashValue] += howManySecondsStay
                 if laboridaDate.date().day == 1 {
-                    numberByMonth[laboridaDate.date().month - 1]++
+                    numberByMonth[laboridaDate.date().month.hashValue]++
                 }
             }
             lastLaboridaDate = laboridaDate

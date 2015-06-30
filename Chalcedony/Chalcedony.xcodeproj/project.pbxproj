@@ -32,6 +32,8 @@
 		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
+		B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
+		B5B7C3341B427354007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
 		B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */; };
 		B5B8A18D1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */; };
 		B5B8A1901B355D2F009CDCBC /* CCDDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8A18E1B355D2F009CDCBC /* CCDDetailTableViewCell.swift */; };
@@ -53,6 +55,8 @@
 		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
 		B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */; };
 		B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */; };
+		B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
+		B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
 		F8DAA0E0A83715D3851A83D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -95,6 +99,7 @@
 		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDWeekday.swift; sourceTree = "<group>"; };
 		B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		B5B8A18E1B355D2F009CDCBC /* CCDDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
 		B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDKaeritaiCountModel.swift; sourceTree = "<group>"; };
 		B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableList.swift; sourceTree = "<group>"; };
+		B5F764911B42760B003762B0 /* CCDMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMonth.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +304,8 @@
 				B584E6E01B3FA87D00518849 /* CCDDataModel.swift */,
 				B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */,
 				B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */,
+				B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */,
+				B5F764911B42760B003762B0 /* CCDMonth.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -496,6 +504,7 @@
 				B584E6E11B3FA87D00518849 /* CCDDataModel.swift in Sources */,
 				B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */,
 				B5C099561B3D9AA3008A1EEE /* UIColor+extension.swift in Sources */,
+				B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
 				B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */,
 				B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */,
@@ -508,6 +517,7 @@
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
 				B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */,
+				B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */,
 				B5B8A1901B355D2F009CDCBC /* CCDDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +527,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B538B3051B3FCF3500F13CF5 /* CCDCalculatedData.swift in Sources */,
+				B5B7C3341B427354007A0E13 /* CCDWeekday.swift in Sources */,
+				B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */,
 				B538B3031B3FCEB700F13CF5 /* CCDDataModel.swift in Sources */,
 				B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */,
 				B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */,
