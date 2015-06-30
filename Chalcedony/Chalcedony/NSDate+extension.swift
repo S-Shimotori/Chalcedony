@@ -27,4 +27,42 @@ extension NSDate {
             && selfDate.month == otherDate.month
             && selfDate.day == otherDate.day
     }
+    func isDescendingWithoutTime(otherNSDate: NSDate) -> Bool {
+        let selfDate = self.date()
+        let otherDate = otherNSDate.date()
+
+        if selfDate.year > otherDate.year {
+            return true
+        } else if selfDate.year < otherDate.year {
+            return false
+        }
+        if selfDate.month > otherDate.month {
+            return true
+        } else if selfDate.month < otherDate.month {
+            return false
+        }
+        if selfDate.day > otherDate.day {
+            return true
+        }
+        return false
+    }
+    func isAscendingWithoutTime(otherNSDate: NSDate) -> Bool {
+        let selfDate = self.date()
+        let otherDate = otherNSDate.date()
+
+        if selfDate.year < otherDate.year {
+            return true
+        } else if selfDate.year > otherDate.year {
+            return false
+        }
+        if selfDate.month < otherDate.month {
+            return true
+        } else if selfDate.month > otherDate.month {
+            return false
+        }
+        if selfDate.day < otherDate.day {
+            return true
+        }
+        return false
+    }
 }
