@@ -53,7 +53,7 @@ class CCDDataModel {
                 var dayAfterLastLaboridaDate = calendar.dateFromComponents(components)!
 
                 //同じ日になるまでカウント
-                while dayAfterLastLaboridaDate.compare(laboinDate) == .OrderedAscending {
+                while dayAfterLastLaboridaDate.isAscendingWithoutTime(laboinDate) {
                     //曜日カウント
                     numberByWeekday[dayAfterLastLaboridaDate.date().weekday - 1]++
                     //月代わりに月カウント
@@ -75,13 +75,21 @@ class CCDDataModel {
             }
 
             //らぼいんとりだが同じ日
-            if laboinDate.isEqualToDate(laboridaDate) {
+            if laboinDate.isEqualWithoutTime(laboridaDate) {
                 let howManySecondsStay = laboridaDate.timeIntervalSinceDate(laboinDate)
                 totalByWeekday[laboinDate.date().weekday - 1] += howManySecondsStay
-                numberByWeekday[laboinDate.date().weekday - 1]++
                 totalByMonth[laboinDate.date().month - 1] += howManySecondsStay
-                if laboinDate.date().day == 1 {
-                    numberByMonth[laboinDate.date().month - 1]++
+
+                if let lastLaboridaDate = lastLaboridaDate where !laboinDate.isEqualWithoutTime(lastLaboridaDate) {
+                    numberByWeekday[laboinDate.date().weekday - 1]++
+                    if laboinDate.date().day == 1 {
+                        numberByMonth[laboinDate.date().month - 1]++
+                    }
+                } else if lastLaboridaDate == nil {
+                    numberByWeekday[laboinDate.date().weekday - 1]++
+                    if laboinDate.date().day == 1 {
+                        numberByMonth[laboinDate.date().month - 1]++
+                    }
                 }
             } else {
                 //翌日の日付午前0時
@@ -93,10 +101,14 @@ class CCDDataModel {
                 var date0 = laboinDate
                 var date1 = calendar.dateFromComponents(components)!
                 //終了日になるまでカウント
-                while(date1.compare(laboridaDate) != .OrderedDescending) {
+                while !date1.isDescendingWithoutTime(laboridaDate) {
                     let howManySecondsStay = date1.timeIntervalSinceDate(date0)
                     totalByWeekday[date0.date().weekday - 1] += howManySecondsStay
-                    numberByWeekday[date0.date().weekday - 1]++
+                    if let lastLaboridaDate = lastLaboridaDate where !date0.isEqualWithoutTime(lastLaboridaDate) {
+                        numberByWeekday[date0.date().weekday - 1]++
+                    } else if lastLaboridaDate == nil {
+                        numberByWeekday[date0.date().weekday - 1]++
+                    }
                     totalByMonth[date0.date().month - 1] += howManySecondsStay
                     if date0.date().day == 1 {
                         numberByMonth[date0.date().month - 1]++
