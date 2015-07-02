@@ -12,7 +12,7 @@ class CCDSettingTableViewController: UITableViewController {
     private let viewTitle = "設定"
     private let switchCellIdentifier = "switchCell"
     private let detailCellIdentifier = "detailCell"
-    private var twitterId: String? = CCDSetting.sharedInstance().twitterId
+    private var twitterId: String? = CCDSetting.twitterId
 
     @IBOutlet private weak var switchToUseLaboLocate: UISwitch!
     @IBOutlet private weak var switchToUseTwitter: UISwitch!
@@ -26,9 +26,9 @@ class CCDSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = viewTitle
-        switchToUseLaboLocate.on = CCDSetting.sharedInstance().useLaboLocate
-        switchToUseTwitter.on = CCDSetting.sharedInstance().useTwitter
-        switchToUseLaboridaChallenge.on = CCDSetting.sharedInstance().useLaboridaChallenge
+        switchToUseLaboLocate.on = CCDSetting.useLaboLocate
+        switchToUseTwitter.on = CCDSetting.useTwitter
+        switchToUseLaboridaChallenge.on = CCDSetting.useLaboridaChallenge
         switchToUseLaboLocate.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         switchToUseTwitter.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
         switchToUseLaboridaChallenge.addTarget(self, action: "valueChangedSwitch:", forControlEvents: .ValueChanged)
@@ -42,15 +42,15 @@ class CCDSettingTableViewController: UITableViewController {
         } else {
             labelToShowTwitterId.text = "未ログイン"
         }
-        labelForMessageToTweetLaboin.text = CCDSetting.sharedInstance().messageToTweetLaboin
-        labelForMessageToTweetLaborida.text = CCDSetting.sharedInstance().messageToTweetLaborida
-        labelForMessageToTweetKaeritai.text = CCDSetting.sharedInstance().messageToTweetKaeritai
+        labelForMessageToTweetLaboin.text = CCDSetting.messageToTweetLaboin
+        labelForMessageToTweetLaborida.text = CCDSetting.messageToTweetLaborida
+        labelForMessageToTweetKaeritai.text = CCDSetting.messageToTweetKaeritai
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if CCDSetting.sharedInstance().useTwitter {
+        if CCDSetting.useTwitter {
             return 3
         } else {
             return 2
@@ -60,15 +60,15 @@ class CCDSettingTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            if !CCDSetting.sharedInstance().useLaboLocate {
+            if !CCDSetting.useLaboLocate {
                 return 1
             }
         case 1:
-            if !CCDSetting.sharedInstance().useTwitter {
+            if !CCDSetting.useTwitter {
                 return 1
             }
         case 2:
-            if !CCDSetting.sharedInstance().useLaboridaChallenge {
+            if !CCDSetting.useLaboridaChallenge {
                 return 1
             }
         default:
@@ -116,8 +116,8 @@ class CCDSettingTableViewController: UITableViewController {
         tableView.beginUpdates()
         switch sender.tag {
         case 0:
-            if sender.on != CCDSetting.sharedInstance().useLaboLocate {
-                CCDSetting.sharedInstance().useLaboLocate = sender.on
+            if sender.on != CCDSetting.useLaboLocate {
+                CCDSetting.useLaboLocate = sender.on
                 var indexPaths = [NSIndexPath]()
                 for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[0] {
                     indexPaths.append(NSIndexPath(forRow: 1, inSection: 0))
@@ -129,8 +129,8 @@ class CCDSettingTableViewController: UITableViewController {
                 }
             }
         case 1:
-            if sender.on != CCDSetting.sharedInstance().useTwitter {
-                CCDSetting.sharedInstance().useTwitter = sender.on
+            if sender.on != CCDSetting.useTwitter {
+                CCDSetting.useTwitter = sender.on
                 var indexPaths = [NSIndexPath]()
                 for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[1] {                    indexPaths.append(NSIndexPath(forRow: i, inSection: 1))
                 }
@@ -143,8 +143,8 @@ class CCDSettingTableViewController: UITableViewController {
                 }
             }
         case 2:
-            if sender.on != CCDSetting.sharedInstance().useLaboridaChallenge {
-                CCDSetting.sharedInstance().useLaboridaChallenge = sender.on
+            if sender.on != CCDSetting.useLaboridaChallenge {
+                CCDSetting.useLaboridaChallenge = sender.on
                 var indexPaths = [NSIndexPath]()
                 for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[2] {
                     indexPaths.append(NSIndexPath(forRow: i, inSection: 2))

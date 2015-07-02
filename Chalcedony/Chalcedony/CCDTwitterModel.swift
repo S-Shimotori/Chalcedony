@@ -17,7 +17,7 @@ class CCDTwitterModel {
             (session, error) -> Void in
             switch (session, error) {
             case (.Some, .None):
-                CCDSetting.sharedInstance().twitterId = session.userName
+                CCDSetting.twitterId = session.userName
             default:
                 //TODO
                 println()

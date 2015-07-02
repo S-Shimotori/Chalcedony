@@ -16,7 +16,7 @@ class CCDSettingKaeritaiTableViewController: UITableViewController, UITextViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        textViewToShowKaeritaiMessage.text = CCDSetting.sharedInstance().messageToTweetKaeritai
+        textViewToShowKaeritaiMessage.text = CCDSetting.messageToTweetKaeritai
         changeTextViewColor(minNumberOfChars <= count(textViewToShowKaeritaiMessage.text)
             && count(textViewToShowKaeritaiMessage.text) <= maxNumberOfChars)
         textViewToShowKaeritaiMessage.delegate = self
@@ -26,7 +26,7 @@ class CCDSettingKaeritaiTableViewController: UITableViewController, UITextViewDe
         super.viewWillDisappear(animated)
         if minNumberOfChars <= count(textViewToShowKaeritaiMessage.text)
         && count(textViewToShowKaeritaiMessage.text) <= maxNumberOfChars {
-            CCDSetting.sharedInstance().messageToTweetKaeritai = textViewToShowKaeritaiMessage.text
+            CCDSetting.messageToTweetKaeritai = textViewToShowKaeritaiMessage.text
             println("set")
         }
     }

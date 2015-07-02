@@ -30,8 +30,8 @@ class CCDMainViewController: UIViewController {
         buttonToLaborida.addTarget(self, action: "touchUpInsideButtonToLaborida:", forControlEvents: .TouchUpInside)
         buttonToTweetKaeritai.addTarget(self, action: "touchUpInsideButtonToTweetKaeritai:", forControlEvents: .TouchUpInside)
 
-        setUIToShowStatus(CCDSetting.sharedInstance().isInLabo())
-        setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
+        setUIToShowStatus(CCDSetting.isInLabo())
+        setLabelToShowTheNumberOfKaeritai(CCDSetting.kaeritaiCount)
 
         activityIndicatorView.frame = CGRectMake(0, 0, 50, 50)
         activityIndicatorView.center = view.center
@@ -73,7 +73,7 @@ class CCDMainViewController: UIViewController {
     }
 
     private func setLabelToShowLocateSetting() {
-        if CCDSetting.sharedInstance().useLaboLocate {
+        if CCDSetting.useLaboLocate {
             labelToShowLocateSetting.text = CCDMessage.UseLaboLocate.Yes.rawValue
         } else {
             labelToShowLocateSetting.text = CCDMessage.UseLaboLocate.No.rawValue
@@ -90,13 +90,13 @@ class CCDMainViewController: UIViewController {
         println("touchUpInsideButtonToLaboinAndCancel")
         let entryLaboModel = CCDEntryLaboModel()
 
-        if !CCDSetting.sharedInstance().isInLabo() {
+        if !CCDSetting.isInLabo() {
             //らぼいん処理
 
-            if CCDSetting.sharedInstance().useTwitter {
+            if CCDSetting.useTwitter {
                 //TODO: ログインしてるかチェック
 
-                if let messageToTweetLaboin = CCDSetting.sharedInstance().messageToTweetLaboin {
+                if let messageToTweetLaboin = CCDSetting.messageToTweetLaboin {
                     //らぼいんツイートの設定あり
                     activityIndicatorView.startAnimating()
                     let twitterModel = CCDTwitterModel()
@@ -110,7 +110,7 @@ class CCDMainViewController: UIViewController {
                         entryLaboModel.laboin()
                         self.setUIToShowStatus(true)
                         showAlertOnSuccessFunction(nil)
-                        println(CCDSetting.sharedInstance().lastEntranceDate)
+                        println(CCDSetting.lastEntranceDate)
                     }
                     let completionOnFailure: (String) -> () = {(failureReason) in
                         showAlertOnFailureFunction(failureReason)
@@ -139,19 +139,19 @@ class CCDMainViewController: UIViewController {
                 message: "入室記録を取り消しますか?"){(action) in
                     entryLaboModel.cancel()
                     self.setUIToShowStatus(false)
-                    println(CCDSetting.sharedInstance().lastEntranceDate)
+                    println(CCDSetting.lastEntranceDate)
             }
             alertFunction(nil)
         }
 
-        println(CCDSetting.sharedInstance().lastEntranceDate)
+        println(CCDSetting.lastEntranceDate)
     }
 
     func touchUpInsideButtonToLaborida(sender: UIButton) {
         let entryLaboModel = CCDEntryLaboModel()
-        if CCDSetting.sharedInstance().isInLabo() {
-            if CCDSetting.sharedInstance().useTwitter {
-                if let messageToTweetLaborida = CCDSetting.sharedInstance().messageToTweetLaborida {
+        if CCDSetting.isInLabo() {
+            if CCDSetting.useTwitter {
+                if let messageToTweetLaborida = CCDSetting.messageToTweetLaborida {
                     //らぼりだツイートの設定あり
                     activityIndicatorView.startAnimating()
                     let twitterModel = CCDTwitterModel()
@@ -165,7 +165,7 @@ class CCDMainViewController: UIViewController {
                         entryLaboModel.laborida()
                         self.setUIToShowStatus(false)
                         showAlertOnSuccessFunction(nil)
-                        println(CCDSetting.sharedInstance().lastEntranceDate)
+                        println(CCDSetting.lastEntranceDate)
                     }
                     let completionOnFailure: (String) -> () = {(failureReason) in
                         showAlertOnFailureFunction(failureReason)
@@ -196,7 +196,7 @@ class CCDMainViewController: UIViewController {
     func touchUpInsideButtonToTweetKaeritai(sender: UIButton) {
         println("touchUpInsideButtonToTweetKaeritai")
         //ログインしてるかのチェック
-        if let messageToTweetKaeritai = CCDSetting.sharedInstance().messageToTweetKaeritai {
+        if let messageToTweetKaeritai = CCDSetting.messageToTweetKaeritai {
             activityIndicatorView.startAnimating()
 
             let twitterModel = CCDTwitterModel()
@@ -205,13 +205,13 @@ class CCDMainViewController: UIViewController {
             let showAlertOnFailureFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetFailure.rawValue, message: CCDMessage.AlertBody.FailedToTweet.rawValue)
             let completionOnSuccess: () -> () = {
                 kaeritaiCountModel.incrementCount()
-                self.setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
+                self.setLabelToShowTheNumberOfKaeritai(CCDSetting.kaeritaiCount)
                 showAlertOnSuccessFunction(nil)
             }
             let completionOnFailure: (String) -> () = {(failureReason) in
                 showAlertOnFailureFunction(failureReason)
             }
-            twitterModel.tweet("\(messageToTweetKaeritai)(\(CCDSetting.sharedInstance().kaeritaiCount+1)回目)",
+            twitterModel.tweet("\(messageToTweetKaeritai)(\(CCDSetting.kaeritaiCount+1)回目)",
                 activityIndicatorView: activityIndicatorView,
                 completionOnSuccess: completionOnSuccess,
                 completionOnFailure: completionOnFailure)

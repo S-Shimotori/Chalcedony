@@ -1,13 +1,13 @@
 
 class CCDEntryLaboModel {
     func laboin() {
-        CCDSetting.sharedInstance().lastEntranceDate = NSDate()
+        CCDSetting.lastEntranceDate = NSDate()
     }
 
     func cancel() {
-        CCDSetting.sharedInstance().lastEntranceDate = nil
+        CCDSetting.lastEntranceDate = nil
     }
     func laborida() {
-        CCDSetting.sharedInstance().lastEntranceDate = nil
+        CCDSetting.lastEntranceDate = nil
     }
 }

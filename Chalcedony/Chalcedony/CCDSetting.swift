@@ -1,13 +1,26 @@
 
 import UIKit
 
-class CCDSetting {
-    private static let _sharedInstance = CCDSetting()
-    class func sharedInstance() -> CCDSetting {
-        return _sharedInstance
+struct CCDSetting {
+    private enum BoolForKey: String {
+        case Initialized = "initialized"
+        case UseTwitter = "useTwitter"
+        case UseLaboridaChallenge = "useLaboridaChallenge"
+        case UseLaboLocate = "useLaboLocate"
     }
-
-    func initialize() {
+    private enum NSDateForKey: String {
+        case LastEntranceDate = "lastEntranceDate"
+    }
+    private enum IntForKey: String {
+        case KaeritaiCount = "kaeritaiCount"
+    }
+    private enum StringForKey: String {
+        case TwitterId = "twitterId"
+        case MessageToTweetLaboin = "messageToTweetLaboin"
+        case MessageToTweetLaborida = "messageToTweetLaborida"
+        case MessageToTweetKaeritai = "messageToTweetKaeritai"
+    }
+    static func initializeApplication() {
         initialized = true
         lastEntranceDate = nil
         kaeritaiCount = 0
@@ -16,27 +29,24 @@ class CCDSetting {
         messageToTweetLaborida = "らぼりだ"
         messageToTweetKaeritai = "研゛究゛室゛や゛だ゛ーーーーー！！！お゛う゛ち゛か゛え゛る゛ーーーーーーーーーー！！！！！！"
     }
-
-    var initialized: Bool {
+    static var initialized: Bool {
         get {
-        return NSUserDefaults.standardUserDefaults().boolForKey("initialized")
+            return getBool(.Initialized)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "initialized")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setBool(newValue, boolForKey: .Initialized)
         }
     }
 
-    var lastEntranceDate: NSDate? {
+    static var lastEntranceDate: NSDate? {
         get {
-        return NSUserDefaults.standardUserDefaults().objectForKey("lastEntranceDate") as? NSDate
+            return getNSDate(.LastEntranceDate)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "lastEntranceDate")
+            setNSDate(newValue, nsDateForKey: .LastEntranceDate)
         }
     }
-
-    func isInLabo() -> Bool {
+    static func isInLabo() -> Bool {
         if let lastEntranceDate = lastEntranceDate {
             return true
         } else {
@@ -44,83 +54,106 @@ class CCDSetting {
         }
     }
 
-    var kaeritaiCount: Int {
+    static var kaeritaiCount: Int {
         get {
-        return NSUserDefaults.standardUserDefaults().objectForKey("kaeritaiCount") as! Int
+            return getInt(.KaeritaiCount)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "kaeritaiCount")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setInt(newValue, intForKey: .KaeritaiCount)
         }
     }
 
-    var twitterId: String? {
+    static var twitterId: String? {
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey("twitterId")
+            return getString(.TwitterId)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "twitterId")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setString(newValue, stringForKey: .TwitterId)
         }
     }
 
-    var useTwitter: Bool {
+    static var useTwitter: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("useTwitter")
+            return getBool(.UseTwitter)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useTwitter")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setBool(newValue, boolForKey: .UseTwitter)
         }
     }
 
-    var useLaboridaChallenge: Bool {
+    static var useLaboridaChallenge: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("useLaboridaChallenge")
+            return getBool(.UseLaboridaChallenge)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useLaboridaChallenge")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setBool(newValue, boolForKey: .UseLaboridaChallenge)
         }
     }
 
-    var useLaboLocate: Bool {
+    static var useLaboLocate: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("useLaboLocate")
+            return getBool(.UseLaboLocate)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "useLaboLocate")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setBool(newValue, boolForKey: .UseLaboLocate)
         }
     }
 
-    var messageToTweetLaboin: String? {
+    static var messageToTweetLaboin: String? {
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetLaboin")
+            return getString(.MessageToTweetLaboin)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetLaboin")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setString(newValue, stringForKey: .MessageToTweetLaboin)
         }
     }
 
-    var messageToTweetLaborida: String? {
+    static var messageToTweetLaborida: String? {
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetLaborida")
+            return getString(.MessageToTweetLaborida)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetLaborida")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setString(newValue, stringForKey: .MessageToTweetLaborida)
         }
     }
 
-    var messageToTweetKaeritai: String? {
+    static var messageToTweetKaeritai: String? {
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey("messageToTweetKaeritai")
+            return getString(.MessageToTweetKaeritai)
         }
         set(newValue) {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "messageToTweetKaeritai")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            setString(newValue, stringForKey: .MessageToTweetKaeritai)
         }
+    }
+
+    private static func setBool(value: Bool, boolForKey: BoolForKey) {
+        NSUserDefaults.standardUserDefaults().setBool(value, forKey: boolForKey.rawValue)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    private static func getBool(boolForKey: BoolForKey) -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey(boolForKey.rawValue)
+    }
+    private static func setInt(value: Int, intForKey: IntForKey) {
+        NSUserDefaults.standardUserDefaults().setInteger(value, forKey: intForKey.rawValue)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    private static func getInt(intForKey: IntForKey) -> Int {
+        return NSUserDefaults.standardUserDefaults().integerForKey(intForKey.rawValue)
+    }
+
+    private static func setNSDate(value: NSDate?, nsDateForKey: NSDateForKey) {
+        NSUserDefaults.standardUserDefaults().setObject(value, forKey: nsDateForKey.rawValue)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    private static func getNSDate(nsDateForKey: NSDateForKey) -> NSDate? {
+        return NSUserDefaults.standardUserDefaults().objectForKey(nsDateForKey.rawValue) as? NSDate
+    }
+
+    private static func setString(value: String?, stringForKey: StringForKey) {
+        NSUserDefaults.standardUserDefaults().setObject(value, forKey: stringForKey.rawValue)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    private static func getString(stringForKey: StringForKey) -> String? {
+        return NSUserDefaults.standardUserDefaults().objectForKey(stringForKey.rawValue) as? String
     }
 }
