@@ -13,6 +13,7 @@
 		B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
 		B538B3051B3FCF3500F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
 		B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6DE1B3FA33700518849 /* NSDate+extension.swift */; };
+		B53BFE8F1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BFE8E1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift */; };
 		B549B1341B3599CC00EDA51C /* CCDTwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */; };
 		B549B1381B359B9F00EDA51C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B549B1351B359B9F00EDA51C /* TwitterKit.framework */; };
 		B549B1391B359B9F00EDA51C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B549B1361B359B9F00EDA51C /* TwitterKitResources.bundle */; };
@@ -75,6 +76,7 @@
 		97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboData.swift; sourceTree = "<group>"; };
 		B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDCalculatedData.swift; sourceTree = "<group>"; };
+		B53BFE8E1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingKaeritaiTableViewController.swift; sourceTree = "<group>"; };
 		B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDTwitterModel.swift; sourceTree = "<group>"; };
 		B549B1351B359B9F00EDA51C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		B549B1361B359B9F00EDA51C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */,
 				B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */,
 				B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */,
+				B53BFE8E1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				B5C099561B3D9AA3008A1EEE /* UIColor+extension.swift in Sources */,
 				B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,
+				B53BFE8F1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift in Sources */,
 				B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */,
 				B5D118FC1B353634000A9537 /* CCDSetting.swift in Sources */,
 				B584E6DF1B3FA33700518849 /* NSDate+extension.swift in Sources */,
