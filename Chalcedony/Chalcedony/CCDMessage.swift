@@ -1,27 +1,31 @@
 
-class CCDMessage {
-    private static let _sharedInstance = CCDMessage()
-    class func sharedInstance() -> CCDMessage {
-        return _sharedInstance
+struct CCDMessage {
+    enum Status: String {
+        case InLabo = "らぼのなかなう"
+        case OutLabo = "らぼのそとなう"
     }
 
-    let inLabo = "らぼのなかなう"
-    let outLabo = "らぼのそとなう"
+    enum UseLaboLocate: String {
+        case Yes = "検知する"
+        case No = "検知しない"
+    }
 
-    let useLaboLocate = "検知する"
-    let notUseLaboLocate = "検知しない"
+    static let twitterUserNamePrefix = "@"
+    static let notLogIn = "未ログイン"
 
-    let twitterUserNamePrefix = "@"
-    let notLogIn = "未ログイン"
-    let tweetSuccessTitle = "ツイート成功"
-    let tweetFailureTitle = "ツイート失敗"
-    let doneTweet = "ツイートしました"
-    let failedToTweet = "ツイート失敗しました"
-
-    let cancelLaboinTitle = "らぼいんキャンセル"
-
-    let yes = "はい"
-    let close = "閉じる"
-    let cancel = "キャンセル"
-    let error = "エラー"
+    enum AlertTitle: String {
+        case TweetSuccess = "ツイート成功"
+        case TweetFailure = "ツイート失敗"
+        case CancelLaboIn = "らぼいんキャンセル"
+    }
+    enum AlertBody: String {
+        case DoneTweet = "ツイートしました"
+        case FailedToTweet = "ツイート失敗しました"
+        case Error = "エラー"
+    }
+    enum AlertButton: String {
+        case Yes = "はい"
+        case Close = "閉じる"
+        case Cancel = "キャンセル"
+    }
 }

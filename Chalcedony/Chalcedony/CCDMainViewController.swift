@@ -53,11 +53,11 @@ class CCDMainViewController: UIViewController {
 
     private func setUIToShowStatus(inLabo: Bool) {
         if inLabo {
-            labelToShowStatus.text = CCDMessage.sharedInstance().inLabo
+            labelToShowStatus.text = CCDMessage.Status.InLabo.rawValue
             buttonToLaboinAndCancel.setImage(UIImage(named: "cancel.png"), forState: UIControlState.Normal)
             buttonToLaboinAndCancel.backgroundColor = UIColor.cherryPinkColor()
         } else {
-            labelToShowStatus.text = CCDMessage.sharedInstance().outLabo
+            labelToShowStatus.text = CCDMessage.Status.OutLabo.rawValue
             buttonToLaboinAndCancel.setImage(UIImage(named: "laboin.png"), forState: UIControlState.Normal)
             buttonToLaboinAndCancel.backgroundColor = UIColor.ultramarineBlueColor()
         }
@@ -66,17 +66,17 @@ class CCDMainViewController: UIViewController {
     private func setLabelToShowTwitterSetting() {
         let twitterModel = CCDTwitterModel()
         if let userName = twitterModel.userName {
-            labelToShowTwitterSetting.text = "\(CCDMessage.sharedInstance().twitterUserNamePrefix)\(userName)"
+            labelToShowTwitterSetting.text = "\(CCDMessage.twitterUserNamePrefix)\(userName)"
         } else {
-            labelToShowTwitterSetting.text = CCDMessage.sharedInstance().notLogIn
+            labelToShowTwitterSetting.text = CCDMessage.notLogIn
         }
     }
 
     private func setLabelToShowLocateSetting() {
         if CCDSetting.sharedInstance().useLaboLocate {
-            labelToShowLocateSetting.text = CCDMessage.sharedInstance().useLaboLocate
+            labelToShowLocateSetting.text = CCDMessage.UseLaboLocate.Yes.rawValue
         } else {
-            labelToShowLocateSetting.text = CCDMessage.sharedInstance().notUseLaboLocate
+            labelToShowLocateSetting.text = CCDMessage.UseLaboLocate.No.rawValue
         }
     }
 
@@ -100,9 +100,9 @@ class CCDMainViewController: UIViewController {
                     //らぼいんツイートの設定あり
                     activityIndicatorView.startAnimating()
                     let twitterModel = CCDTwitterModel()
-                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetSuccessTitle, message: CCDMessage.sharedInstance().doneTweet)
-                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず入室の記録のみ行いますか?"){(action) in
+                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetSuccess.rawValue, message: CCDMessage.AlertBody.DoneTweet.rawValue)
+                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
+                        message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laboin()
                         self.setUIToShowStatus(true)
                     }
@@ -121,8 +121,8 @@ class CCDMainViewController: UIViewController {
                         completionOnFailure: completionOnFailure)
                 } else {
                     //ツイート文設定がnil
-                    let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず入室の記録のみ行いますか?"){(action) in
+                    let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
+                        message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず入室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laboin()
                         self.setUIToShowStatus(true)
                     }
@@ -135,7 +135,7 @@ class CCDMainViewController: UIViewController {
             }
         } else {
             //取り消し
-            let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().cancelLaboinTitle,
+            let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.CancelLaboIn.rawValue,
                 message: "入室記録を取り消しますか?"){(action) in
                     entryLaboModel.cancel()
                     self.setUIToShowStatus(false)
@@ -155,9 +155,9 @@ class CCDMainViewController: UIViewController {
                     //らぼりだツイートの設定あり
                     activityIndicatorView.startAnimating()
                     let twitterModel = CCDTwitterModel()
-                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetSuccessTitle, message: CCDMessage.sharedInstance().doneTweet)
-                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず退室の記録のみ行いますか?"){(action) in
+                    let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetSuccess.rawValue, message: CCDMessage.AlertBody.DoneTweet.rawValue)
+                    let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
+                        message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laborida()
                         self.setUIToShowStatus(false)
                     }
@@ -176,8 +176,8 @@ class CCDMainViewController: UIViewController {
                         completionOnFailure: completionOnFailure)
                 } else {
                     //ツイート文設定がnil
-                    let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.sharedInstance().tweetFailureTitle,
-                        message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイートをせず退室の記録のみ行いますか?"){(action) in
+                    let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
+                        message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず退室の記録のみ行いますか?"){(action) in
                         entryLaboModel.laborida()
                         self.setUIToShowStatus(false)
                     }
@@ -201,8 +201,8 @@ class CCDMainViewController: UIViewController {
 
             let twitterModel = CCDTwitterModel()
             let kaeritaiCountModel = CCDKaeritaiCountModel()
-            let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetSuccessTitle, message: CCDMessage.sharedInstance().doneTweet)
-            let showAlertOnFailureFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetFailureTitle, message: CCDMessage.sharedInstance().failedToTweet)
+            let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetSuccess.rawValue, message: CCDMessage.AlertBody.DoneTweet.rawValue)
+            let showAlertOnFailureFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetFailure.rawValue, message: CCDMessage.AlertBody.FailedToTweet.rawValue)
             let completionOnSuccess: () -> () = {
                 kaeritaiCountModel.incrementCount()
                 self.setLabelToShowTheNumberOfKaeritai(CCDSetting.sharedInstance().kaeritaiCount)
@@ -216,16 +216,16 @@ class CCDMainViewController: UIViewController {
                 completionOnSuccess: completionOnSuccess,
                 completionOnFailure: completionOnFailure)
         } else {
-            makeShowAlertWithCloseButtonFunction(CCDMessage.sharedInstance().tweetFailureTitle, message: "\(CCDMessage.sharedInstance().failedToTweet)\nツイート文が設定されていません")(nil)
+            makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetFailure.rawValue, message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイート文が設定されていません")(nil)
         }
     }
 
     private func makeShowAlertWithCloseButtonFunction(title: String, message: String) -> ((String?)->()) {
-        let closeAlertAction = UIAlertAction(title: CCDMessage.sharedInstance().close, style: .Default, handler: nil)
+        let closeAlertAction = UIAlertAction(title: CCDMessage.AlertButton.Close.rawValue, style: .Default, handler: nil)
         return {(failureReason) in
             let fullMessage: String
             if let failureReason = failureReason {
-                fullMessage = "\(message)\n(\(CCDMessage.sharedInstance().error): \(failureReason))"
+                fullMessage = "\(message)\n(\(CCDMessage.AlertBody.Error.rawValue): \(failureReason))"
             } else {
                 fullMessage = message
             }
@@ -236,12 +236,12 @@ class CCDMainViewController: UIViewController {
     }
 
     private func makeShowAlertWithImplementionFunction(title: String, message: String, completion: ((UIAlertAction!) -> ())?) -> ((String?)->()) {
-        let implementAlertAction = UIAlertAction(title: CCDMessage.sharedInstance().yes, style: .Default, handler: completion)
-        let cancelAlertAction = UIAlertAction(title: CCDMessage.sharedInstance().cancel, style: .Cancel, handler: nil)
+        let implementAlertAction = UIAlertAction(title: CCDMessage.AlertButton.Yes.rawValue, style: .Default, handler: completion)
+        let cancelAlertAction = UIAlertAction(title: CCDMessage.AlertButton.Cancel.rawValue, style: .Cancel, handler: nil)
         return {(failureReason) in
             let bodyMessage: String
             if let failureReason = failureReason {
-                bodyMessage = "\(message)\n(\(CCDMessage.sharedInstance().error): \(failureReason))"
+                bodyMessage = "\(message)\n(\(CCDMessage.AlertBody.Error.rawValue): \(failureReason))"
             } else {
                 bodyMessage = message
             }
