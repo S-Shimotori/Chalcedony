@@ -55,7 +55,7 @@
 		B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */; };
 		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
 		B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */; };
-		B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */; };
+		B5F3DBE61B450FF9007F5537 /* CCDSettingTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3DBE51B450FF9007F5537 /* CCDSettingTableList.swift */; };
 		B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
 		B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
 		F8DAA0E0A83715D3851A83D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -122,7 +122,7 @@
 		B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryLaboModel.swift; sourceTree = "<group>"; };
 		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
 		B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDKaeritaiCountModel.swift; sourceTree = "<group>"; };
-		B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableList.swift; sourceTree = "<group>"; };
+		B5F3DBE51B450FF9007F5537 /* CCDSettingTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableList.swift; sourceTree = "<group>"; };
 		B5F764911B42760B003762B0 /* CCDMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMonth.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,13 +302,13 @@
 				B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */,
 				B5D118FF1B353AA4000A9537 /* CCDMessage.swift */,
 				B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */,
-				B5D119031B3544ED000A9537 /* CCDSettingTableList.swift */,
 				B549B1331B3599CC00EDA51C /* CCDTwitterModel.swift */,
 				B584E6E01B3FA87D00518849 /* CCDDataModel.swift */,
 				B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */,
 				B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */,
 				B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */,
 				B5F764911B42760B003762B0 /* CCDMonth.swift */,
+				B5F3DBE51B450FF9007F5537 /* CCDSettingTableList.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -505,7 +505,7 @@
 				B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */,
 				B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */,
 				B584E6E11B3FA87D00518849 /* CCDDataModel.swift in Sources */,
-				B5D119041B3544ED000A9537 /* CCDSettingTableList.swift in Sources */,
+				B5F3DBE61B450FF9007F5537 /* CCDSettingTableList.swift in Sources */,
 				B5C099561B3D9AA3008A1EEE /* UIColor+extension.swift in Sources */,
 				B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */,
 				B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */,

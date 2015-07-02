@@ -74,7 +74,7 @@ class CCDSettingTableViewController: UITableViewController {
         default:
             break
         }
-        return CCDSettingTableList.sharedInstance().settingList[section].count
+        return CCDSettingTableList.numberOfRowsInSection[section]
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -119,7 +119,7 @@ class CCDSettingTableViewController: UITableViewController {
             if sender.on != CCDSetting.sharedInstance().useLaboLocate {
                 CCDSetting.sharedInstance().useLaboLocate = sender.on
                 var indexPaths = [NSIndexPath]()
-                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[0].count {
+                for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[0] {
                     indexPaths.append(NSIndexPath(forRow: 1, inSection: 0))
                 }
                 if sender.on == true {
@@ -132,8 +132,7 @@ class CCDSettingTableViewController: UITableViewController {
             if sender.on != CCDSetting.sharedInstance().useTwitter {
                 CCDSetting.sharedInstance().useTwitter = sender.on
                 var indexPaths = [NSIndexPath]()
-                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[1].count {
-                    indexPaths.append(NSIndexPath(forRow: i, inSection: 1))
+                for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[1] {                    indexPaths.append(NSIndexPath(forRow: i, inSection: 1))
                 }
                 if sender.on == true {
                     tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
@@ -147,7 +146,7 @@ class CCDSettingTableViewController: UITableViewController {
             if sender.on != CCDSetting.sharedInstance().useLaboridaChallenge {
                 CCDSetting.sharedInstance().useLaboridaChallenge = sender.on
                 var indexPaths = [NSIndexPath]()
-                for i in 1 ..< CCDSettingTableList.sharedInstance().settingList[2].count {
+                for i in 1 ..< CCDSettingTableList.numberOfRowsInSection[2] {
                     indexPaths.append(NSIndexPath(forRow: i, inSection: 2))
                 }
                 if sender.on == true {
