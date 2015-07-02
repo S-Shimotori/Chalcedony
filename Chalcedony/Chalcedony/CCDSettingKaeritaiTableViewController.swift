@@ -55,11 +55,11 @@ class CCDSettingKaeritaiTableViewController: UITableViewController, UITextViewDe
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
         textView.endEditing(true)
         println(count(textView.text))
-        changeTextViewColor(minNumberOfChars <= count(textViewToShowKaeritaiMessage.text)
-            && count(textViewToShowKaeritaiMessage.text) <= maxNumberOfChars)
         return true
     }
     func textViewDidChange(textView: UITextView) {
+        changeTextViewColor(minNumberOfChars <= count(textViewToShowKaeritaiMessage.text)
+            && count(textViewToShowKaeritaiMessage.text) <= maxNumberOfChars)
         println("textViewDidChange")
     }
 }
