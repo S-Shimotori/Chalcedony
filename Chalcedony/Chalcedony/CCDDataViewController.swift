@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CCDDataViewController: UIViewController {
     private let pageTitle = "データ"
+    private let dateFormatter = NSDateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = pageTitle
 
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .MediumStyle
+        let realm = Realm()
+        let datas = realm.objects(CCDDataRealmModel)
+        for data in datas {
+            println("\(dateFormatter.stringFromDate(data.laboinDate)) -> \(dateFormatter.stringFromDate(data.laboridaDate))")
+        }
         // Do any additional setup after loading the view.
     }
 
