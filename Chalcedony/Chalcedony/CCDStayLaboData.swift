@@ -11,11 +11,9 @@ import Foundation
 struct CCDStayLaboData: Comparable {
     let laboinDate: NSDate
     let laboridaDate: NSDate
-    let howManySecondsStay: Double
     init(laboinDate: NSDate, laboridaDate: NSDate) {
         self.laboinDate = laboinDate
         self.laboridaDate = laboridaDate
-        self.howManySecondsStay = laboridaDate.timeIntervalSinceDate(laboinDate)
     }
 }
 
