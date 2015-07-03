@@ -1,5 +1,5 @@
 //
-//  CCDDataModel.swift
+//  CCDStayLaboDataProcessor.swift
 //  Chalcedony
 //
 //  Created by S-Shimotori on 6/28/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCDDataModel {
+class CCDStayLaboDataProcessor {
     private let stayLaboDataList: [CCDStayLaboData]
     private let dateFormatter = NSDateFormatter()
     private let calendar = NSCalendar.currentCalendar()
@@ -20,7 +20,7 @@ class CCDDataModel {
         self.stayLaboDataList = stayLaboDataList
     }
 
-    func calculateStayLaboData() -> CCDCalculatedData {
+    func processStayLaboData() -> CCDCalculatedData {
         var numberByWeekday = [Int](count: 7, repeatedValue: 0)
         var numberByMonth = [Int](count: 12, repeatedValue: 0)
         var totalByWeekday = [Double](count: 7, repeatedValue: 0)
