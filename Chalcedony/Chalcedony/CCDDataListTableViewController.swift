@@ -12,7 +12,7 @@ import RealmSwift
 class CCDDataListTableViewController: UITableViewController {
     private let dataListCellIdentifier = "dataListCellIdentifier"
     private let dateFormatter = NSDateFormatter()
-    private var dataSet: [(laboin: NSDate, laborida: NSDate, howLongStayLabo: Double)] = []
+    private var dataSet: [(laboin: NSDate, laborida: NSDate, howLongStayLabo: NSTimeInterval)] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +50,10 @@ class CCDDataListTableViewController: UITableViewController {
     func updateCell(cell: CCDDataListTableViewCell, indexPath: NSIndexPath) {
         cell.labelToShowLaboinDate.text = dateFormatter.stringFromDate(dataSet[indexPath.row].laboin)
         cell.labelToShowLaboridaDate.text = dateFormatter.stringFromDate(dataSet[indexPath.row].laborida)
-        cell.labelToShowHowLongStayLabo.text = "\(dataSet[indexPath.row].howLongStayLabo)"
+
+        let howLongStayLabo = dataSet[indexPath.row].howLongStayLabo.convertToShow()
+        cell.labelToShowHowLongStayLabo.text =
+            "\(howLongStayLabo.day)日\(howLongStayLabo.hour)時間\(howLongStayLabo.minute)分\(Int(howLongStayLabo.second))秒"
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

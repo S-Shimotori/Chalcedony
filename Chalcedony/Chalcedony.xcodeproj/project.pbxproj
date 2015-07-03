@@ -21,6 +21,7 @@
 		B56D56251B3451B7008B18A8 /* CCDMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */; };
 		B56D56271B3456FD008B18A8 /* CCDDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */; };
 		B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */; };
+		B5731EBC1B46AA580013C105 /* NSTimeInterval+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5731EBB1B46AA580013C105 /* NSTimeInterval+extension.swift */; };
 		B584E6DF1B3FA33700518849 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6DE1B3FA33700518849 /* NSDate+extension.swift */; };
 		B584E6E11B3FA87D00518849 /* CCDStayLaboDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6E01B3FA87D00518849 /* CCDStayLaboDataProcessor.swift */; };
 		B59475281B3D941600ADCEF3 /* laboin.png in Resources */ = {isa = PBXBuildFile; fileRef = B59475251B3D941600ADCEF3 /* laboin.png */; };
@@ -89,6 +90,7 @@
 		B56D56241B3451B7008B18A8 /* CCDMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMainViewController.swift; sourceTree = "<group>"; };
 		B56D56261B3456FD008B18A8 /* CCDDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDDataViewController.swift; sourceTree = "<group>"; };
 		B56D562A1B345B94008B18A8 /* CCDAboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDAboutAppViewController.swift; sourceTree = "<group>"; };
+		B5731EBB1B46AA580013C105 /* NSTimeInterval+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+extension.swift"; sourceTree = "<group>"; };
 		B584E6DE1B3FA33700518849 /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
 		B584E6E01B3FA87D00518849 /* CCDStayLaboDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboDataProcessor.swift; sourceTree = "<group>"; };
 		B59475251B3D941600ADCEF3 /* laboin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laboin.png; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				B5C099551B3D9AA3008A1EEE /* UIColor+extension.swift */,
 				B584E6DE1B3FA33700518849 /* NSDate+extension.swift */,
+				B5731EBB1B46AA580013C105 /* NSTimeInterval+extension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */,
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,
+				B5731EBC1B46AA580013C105 /* NSTimeInterval+extension.swift in Sources */,
 				B5D118F51B350A87000A9537 /* CCDSettingTableViewController.swift in Sources */,
 				B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */,
 				B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */,
