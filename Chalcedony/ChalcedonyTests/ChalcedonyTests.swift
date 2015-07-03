@@ -21,7 +21,7 @@ class ChalcedonyTests: XCTestCase {
         super.tearDown()
     }
 
-    func testCCDDataModel() {
+    func testCCDStayLaboDataProcessor() {
         let stayLaboDataList = [
             //Sunday
             CCDStayLaboData(
@@ -52,21 +52,21 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 27, hour: 10, minute: 10, second: 10)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],           40 * 3600 + 40 * 60 + 40, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    10 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   10 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   10 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 1, 1, 1]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],           40 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    10 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   10 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [1, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
-    func testCCDDataModelWithExtendDate() {
+    func testCCDStayLaboDataProcessorWithExtendDate() {
         let stayLaboDataList = [
             //Sunday -> Monday
             CCDStayLaboData(
@@ -85,21 +85,21 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 28, hour: 10, minute: 10, second: 10)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
-    func testCCDDataModelWithReverse() {
+    func testCCDStayLaboDataProcessorWithReverse() {
         let stayLaboDataList = [
             //Saturday -> Sunday
             CCDStayLaboData(
@@ -119,21 +119,21 @@ class ChalcedonyTests: XCTestCase {
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 22, hour:  0, minute:  0, second: 10)),
 
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],          116 * 3600 + 20 * 60 + 30, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],     34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 10 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],     10 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
-    func testCCDDataModelWithDuplicate() {
+    func testCCDStayLaboDataProcessorWithDuplicate() {
         let stayLaboDataList = [
             //Sunday -> Monday
             CCDStayLaboData(
@@ -164,21 +164,21 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 27, hour:  0, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 28, hour: 10, minute: 10, second: 10)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],         178 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    34 * 3600 + 10 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue], 24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],         178 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],    34 * 3600 + 10 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],   24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue], 24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],    24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],  24 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [2, 1, 1, 1, 1, 1, 1]               , "PASS")
     }
 
-    func testCCDDataModelWithRedundantData() {
+    func testCCDStayLaboDataProcessorWithRedundantData() {
         let stayLaboDataList = [
             //Sunday
             CCDStayLaboData(
@@ -200,21 +200,21 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 17, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 21, hour: 18, minute:  0, second:  0)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],            9 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      9 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 0, 0, 0, 0, 0, 0]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],            9 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      9 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0      +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [1, 0, 0, 0, 0, 0, 0]               , "PASS")
     }
 
-    func testCCDDataModelWithSameDate() {
+    func testCCDStayLaboDataProcessorWithSameDate() {
         let stayLaboDataList = [
             //Sunday
             CCDStayLaboData(
@@ -238,21 +238,21 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  1, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.June     , day: 24, hour:  1, minute: 10, second: 10)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],            0 * 3600 + 40 * 60 + 40, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 20, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 20 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 20 * 60 + 20, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [1, 1, 1, 1, 0, 0, 0]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],            0 * 3600 + 40 * 60 + 40, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 + 20 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],   0 * 3600 + 20 * 60 + 20, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [1, 1, 1, 1, 0, 0, 0]               , "PASS")
     }
 
-    func testCCDDataModelWithExtendMonth() {
+    func testCCDStayLaboDataProcessorWithExtendMonth() {
         let stayLaboDataList = [
             //Tuesday(June)
             CCDStayLaboData(
@@ -279,19 +279,19 @@ class ChalcedonyTests: XCTestCase {
                 laboinDate:   makeNSDate(2015, month: CCDMonth.July     , day:  1, hour:  18, minute:  0, second:  0),
                 laboridaDate: makeNSDate(2015, month: CCDMonth.July     , day:  1, hour:  19, minute:  0, second:  0)),
         ]
-        let dataModel = CCDDataModel(stayLaboDataList: stayLaboDataList)
-        let calculatedData = dataModel.calculateStayLaboData()
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.June.hashValue],            4 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByMonth[CCDMonth.July.hashValue],           15 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     4 * 3600 +  0 * 60 + 10, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],  15 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqualWithAccuracy(calculatedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
-        XCTAssertEqual(calculatedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], "PASS")
-        XCTAssertEqual(calculatedData.numberByWeekday, [0, 0, 1, 1, 0, 0, 0]               , "PASS")
+        let dataProcessor = CCDStayLaboDataProcessor(stayLaboDataList: stayLaboDataList)
+        let processedData = dataProcessor.processStayLaboData()
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.June.hashValue],            4 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByMonth[CCDMonth.July.hashValue],           15 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Sunday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Monday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Tuesday.hashValue],     4 * 3600 +  0 * 60 + 10, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Wednesday.hashValue],  15 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Thursday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Friday.hashValue],      0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqualWithAccuracy(processedData.totalByWeekday[CCDWeekday.Saturday.hashValue],    0 * 3600 +  0 * 60 +  0, 1, "PASS")
+        XCTAssertEqual(processedData.numberByMonth,   [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], "PASS")
+        XCTAssertEqual(processedData.numberByWeekday, [0, 0, 1, 1, 0, 0, 0]               , "PASS")
     }
 
     private func makeNSDate(year: Int, month: CCDMonth, day: Int, hour: Int, minute: Int, second: Int) -> NSDate {
