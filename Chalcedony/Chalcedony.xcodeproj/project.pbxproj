@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D365E8217F9A6775842E6E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7663B3EB7192199B7404B85B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
 		B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
 		B538B3031B3FCEB700F13CF5 /* CCDStayLaboDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6E01B3FA87D00518849 /* CCDStayLaboDataProcessor.swift */; };
@@ -35,7 +36,6 @@
 		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
 		B597DE971B343770002A7CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597DE961B343770002A7CC8 /* Images.xcassets */; };
 		B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B597DE981B343770002A7CC8 /* LaunchScreen.xib */; };
-		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 		B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
@@ -60,6 +60,7 @@
 		B5D118FE1B3538D0000A9537 /* CCDEntryLaboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */; };
 		B5D119001B353AA4000A9537 /* CCDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D118FF1B353AA4000A9537 /* CCDMessage.swift */; };
 		B5D119021B353EEB000A9537 /* CCDKaeritaiCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */; };
+		B5E50AF31B47C7B800C2663E /* CCDStayLaboDataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E50AF21B47C7B800C2663E /* CCDStayLaboDataProcessorTests.swift */; };
 		B5F3DBE61B450FF9007F5537 /* CCDSettingTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3DBE51B450FF9007F5537 /* CCDSettingTableList.swift */; };
 		B5F764921B42760B003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
 		B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F764911B42760B003762B0 /* CCDMonth.swift */; };
@@ -108,7 +109,6 @@
 		B597DE991B343770002A7CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChalcedonyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DEA41B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDWeekday.swift; sourceTree = "<group>"; };
@@ -132,6 +132,7 @@
 		B5D118FD1B3538D0000A9537 /* CCDEntryLaboModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDEntryLaboModel.swift; sourceTree = "<group>"; };
 		B5D118FF1B353AA4000A9537 /* CCDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMessage.swift; sourceTree = "<group>"; };
 		B5D119011B353EEB000A9537 /* CCDKaeritaiCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDKaeritaiCountModel.swift; sourceTree = "<group>"; };
+		B5E50AF21B47C7B800C2663E /* CCDStayLaboDataProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboDataProcessorTests.swift; sourceTree = "<group>"; };
 		B5F3DBE51B450FF9007F5537 /* CCDSettingTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingTableList.swift; sourceTree = "<group>"; };
 		B5F764911B42760B003762B0 /* CCDMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDMonth.swift; sourceTree = "<group>"; };
 		C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D365E8217F9A6775842E6E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +264,8 @@
 		B597DEA21B343770002A7CC8 /* ChalcedonyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */,
 				B597DEA31B343770002A7CC8 /* Supporting Files */,
+				B5E50AF21B47C7B800C2663E /* CCDStayLaboDataProcessorTests.swift */,
 			);
 			path = ChalcedonyTests;
 			sourceTree = "<group>";
@@ -364,9 +366,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B597DEAC1B343770002A7CC8 /* Build configuration list for PBXNativeTarget "ChalcedonyTests" */;
 			buildPhases = (
+				14EAF73CBEB89EF11680C974 /* Check Pods Manifest.lock */,
 				B597DE9B1B343770002A7CC8 /* Sources */,
 				B597DE9C1B343770002A7CC8 /* Frameworks */,
 				B597DE9D1B343770002A7CC8 /* Resources */,
+				197BF3CCFE6E61F03585C7A7 /* Embed Pods Frameworks */,
+				F9C74BC36F5E6CD6188BCC88 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -453,6 +458,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14EAF73CBEB89EF11680C974 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		197BF3CCFE6E61F03585C7A7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		58E26560B330DED09C95141F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,6 +546,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		F9C74BC36F5E6CD6188BCC88 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,13 +600,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E50AF31B47C7B800C2663E /* CCDStayLaboDataProcessorTests.swift in Sources */,
 				B538B3051B3FCF3500F13CF5 /* CCDCalculatedData.swift in Sources */,
 				B5B7C3341B427354007A0E13 /* CCDWeekday.swift in Sources */,
 				B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */,
 				B538B3031B3FCEB700F13CF5 /* CCDStayLaboDataProcessor.swift in Sources */,
 				B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */,
 				B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */,
-				B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +755,7 @@
 		};
 		B597DEAD1B343770002A7CC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -724,6 +775,7 @@
 		};
 		B597DEAE1B343770002A7CC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

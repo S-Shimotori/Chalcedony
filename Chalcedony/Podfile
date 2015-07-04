@@ -4,3 +4,7 @@ pod 'RealmSwift'
 pod "PromiseKit", "~> 2.0"
 pod 'PNChart'
 
+link_with 'ChalcedonyTests'
+use_frameworks!
+pod 'Quick', '< 0.4'
+pod 'Nimble', '< 2.0'
