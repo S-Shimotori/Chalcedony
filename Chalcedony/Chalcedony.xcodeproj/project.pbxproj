@@ -37,7 +37,6 @@
 		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
 		B597DE971B343770002A7CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597DE961B343770002A7CC8 /* Images.xcassets */; };
 		B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B597DE981B343770002A7CC8 /* LaunchScreen.xib */; };
-		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 		B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
@@ -114,7 +113,6 @@
 		B597DE991B343770002A7CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChalcedonyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DEA41B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDWeekday.swift; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		B597DEA21B343770002A7CC8 /* ChalcedonyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */,
 				B597DEA31B343770002A7CC8 /* Supporting Files */,
 				B52919261B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift */,
 			);
@@ -616,7 +613,6 @@
 				B52919271B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift in Sources */,
 				B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */,
 				B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */,
-				B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
