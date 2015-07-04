@@ -1,5 +1,6 @@
 PODS:
   - IQKeyboardManager (3.2.4)
+  - Nimble (1.0.0)
   - OMGHTTPURLRQ (2.1):
     - OMGHTTPURLRQ/RQ (= 2.1)
   - OMGHTTPURLRQ/FormURLEncode (2.1)
@@ -21,6 +22,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (2.0.4):
     - PromiseKit/CorePromise
+  - Quick (0.3.1)
   - Realm (0.93.2):
     - Realm/Headers (= 0.93.2)
   - Realm/Headers (0.93.2)
@@ -30,15 +32,19 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - Nimble (< 2.0)
   - PNChart
   - PromiseKit (~> 2.0)
+  - Quick (< 0.4)
   - RealmSwift
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
   OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
   PNChart: 8d81e061ec4845915184755d8da84f385ca1cb28
   PromiseKit: d7d1a1e86a9d661b6396cc1b714da406b6503ef9
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
   Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
   RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa

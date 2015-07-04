@@ -49,18 +49,22 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'IQKeyboardManager.framework'
+  install_framework 'Nimble.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PNChart.framework'
   install_framework 'PromiseKit.framework'
+  install_framework 'Quick.framework'
   install_framework 'Realm.framework'
   install_framework 'RealmSwift.framework'
   install_framework 'UICountingLabel.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'IQKeyboardManager.framework'
+  install_framework 'Nimble.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PNChart.framework'
   install_framework 'PromiseKit.framework'
+  install_framework 'Quick.framework'
   install_framework 'Realm.framework'
   install_framework 'RealmSwift.framework'
   install_framework 'UICountingLabel.framework'
