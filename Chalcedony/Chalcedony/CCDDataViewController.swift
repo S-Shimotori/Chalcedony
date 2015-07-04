@@ -15,7 +15,6 @@ class CCDDataViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = pageTitle
-
         // Do any additional setup after loading the view.
     }
 

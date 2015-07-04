@@ -89,6 +89,7 @@ class CCDMainViewController: UIViewController {
     func touchUpInsideButtonToLaboinAndCancel(sender: UIButton) {
         println("touchUpInsideButtonToLaboinAndCancel")
         let entryLaboModel = CCDEntryLaboModel()
+        let laboinDate = NSDate()
 
         if !CCDSetting.isInLabo() {
             //らぼいん処理
@@ -103,11 +104,11 @@ class CCDMainViewController: UIViewController {
                     let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetSuccess.rawValue, message: CCDMessage.AlertBody.DoneTweet.rawValue)
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
                         message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず入室の記録のみ行いますか?"){(action) in
-                        entryLaboModel.laboin()
+                        entryLaboModel.laboin(laboinDate)
                         self.setUIToShowStatus(true)
                     }
                     let completionOnSuccess: () -> () = {
-                        entryLaboModel.laboin()
+                        entryLaboModel.laboin(laboinDate)
                         self.setUIToShowStatus(true)
                         showAlertOnSuccessFunction(nil)
                         println(CCDSetting.lastEntranceDate)
@@ -123,14 +124,14 @@ class CCDMainViewController: UIViewController {
                     //ツイート文設定がnil
                     let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
                         message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず入室の記録のみ行いますか?"){(action) in
-                        entryLaboModel.laboin()
+                        entryLaboModel.laboin(laboinDate)
                         self.setUIToShowStatus(true)
                     }
                     alertFunction("ツイート文が設定されていません")
                 }
             } else {
                 //記録のみを行う
-                entryLaboModel.laboin()
+                entryLaboModel.laboin(laboinDate)
                 self.setUIToShowStatus(true)
             }
         } else {
@@ -149,6 +150,8 @@ class CCDMainViewController: UIViewController {
 
     func touchUpInsideButtonToLaborida(sender: UIButton) {
         let entryLaboModel = CCDEntryLaboModel()
+        let laboridaDate = NSDate()
+
         if CCDSetting.isInLabo() {
             if CCDSetting.useTwitter {
                 if let messageToTweetLaborida = CCDSetting.messageToTweetLaborida {
@@ -158,11 +161,11 @@ class CCDMainViewController: UIViewController {
                     let showAlertOnSuccessFunction = makeShowAlertWithCloseButtonFunction(CCDMessage.AlertTitle.TweetSuccess.rawValue, message: CCDMessage.AlertBody.DoneTweet.rawValue)
                     let showAlertOnFailureFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
                         message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず退室の記録のみ行いますか?"){(action) in
-                        entryLaboModel.laborida()
+                        entryLaboModel.laborida(laboridaDate)
                         self.setUIToShowStatus(false)
                     }
                     let completionOnSuccess: () -> () = {
-                        entryLaboModel.laborida()
+                        entryLaboModel.laborida(laboridaDate)
                         self.setUIToShowStatus(false)
                         showAlertOnSuccessFunction(nil)
                         println(CCDSetting.lastEntranceDate)
@@ -178,13 +181,13 @@ class CCDMainViewController: UIViewController {
                     //ツイート文設定がnil
                     let alertFunction = makeShowAlertWithImplementionFunction(CCDMessage.AlertTitle.TweetFailure.rawValue,
                         message: "\(CCDMessage.AlertBody.FailedToTweet.rawValue)\nツイートをせず退室の記録のみ行いますか?"){(action) in
-                        entryLaboModel.laborida()
+                        entryLaboModel.laborida(laboridaDate)
                         self.setUIToShowStatus(false)
                     }
                     alertFunction("ツイート文が設定されていません")
                 }
             } else {
-                entryLaboModel.laborida()
+                entryLaboModel.laborida(laboridaDate)
                 setUIToShowStatus(false)
             }
         } else {
