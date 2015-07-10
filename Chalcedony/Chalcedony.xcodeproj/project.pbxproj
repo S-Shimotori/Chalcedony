@@ -38,6 +38,7 @@
 		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
+		B5ADC84C1B4FCB7400542B87 /* CCDLaboLocateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADC84B1B4FCB7400542B87 /* CCDLaboLocateViewController.swift */; };
 		B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
 		B5B7C3341B427354007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
 		B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */; };
@@ -111,6 +112,7 @@
 		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		B5ADC84B1B4FCB7400542B87 /* CCDLaboLocateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDLaboLocateViewController.swift; sourceTree = "<group>"; };
 		B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDWeekday.swift; sourceTree = "<group>"; };
 		B5B8A18A1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B5B8A18B1B354DDF009CDCBC /* CCDSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDSwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				B5D118F41B350A87000A9537 /* CCDSettingTableViewController.swift */,
 				B53BFE8E1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift */,
 				B5948AC91B46725900B0675D /* CCDDataListTableViewController.swift */,
+				B5ADC84B1B4FCB7400542B87 /* CCDLaboLocateViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				B5948AC81B46659700B0675D /* CCDDataRealmModel.swift in Sources */,
 				B597DE901B343770002A7CC8 /* AppDelegate.swift in Sources */,
 				B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */,
+				B5ADC84C1B4FCB7400542B87 /* CCDLaboLocateViewController.swift in Sources */,
 				B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */,
 				B56D562B1B345B94008B18A8 /* CCDAboutAppViewController.swift in Sources */,
 				B5B8A18C1B354DDF009CDCBC /* CCDSwitchTableViewCell.swift in Sources */,

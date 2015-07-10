@@ -317,6 +317,32 @@
             </objects>
             <point key="canvasLocation" x="449" y="1245"/>
         </scene>
+        <!--Labo Locate View Controller-->
+        <scene sceneID="oAq-jy-xHa">
+            <objects>
+                <viewController id="2ZY-d8-xAY" customClass="CCDLaboLocateViewController" customModule="Chalcedony" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="car-Ml-7ey"/>
+                        <viewControllerLayoutGuide type="bottom" id="vYz-Bw-c8O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bea-aJ-qWE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-ZB-Dfk" userLabel="mapView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="J9b-ZB-Dfk" id="rG4-yR-vf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4o2-bg-6sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="2019"/>
+        </scene>
         <!--Data List Table View Controller-->
         <scene sceneID="E7S-gv-CtK">
             <objects>
@@ -423,6 +449,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="0Ks-ZM-K4W" secondAttribute="bottom" id="stN-gO-ZDh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2ZY-d8-xAY" kind="show" id="eZ0-Qh-iPh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -804,7 +833,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpM-Nx-KJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093" y="1947"/>
+            <point key="canvasLocation" x="1094" y="2019"/>
         </scene>
         <!--About App View Controller-->
         <scene sceneID="g8m-cg-gmw">
