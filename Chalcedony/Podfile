@@ -4,3 +4,7 @@ pod 'RealmSwift'
 pod "PromiseKit", "~> 2.0"
 pod 'PNChart'
 
+target 'ChalcedonyTests' do
+    pod 'Quick', '~> 0.3.0'
+    pod 'Nimble', '~> 1.0.0'
+end
