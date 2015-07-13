@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86626E3DA2B3F0AA7BA2641F /* Pods_ChalcedonyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B6296131B94D4E5E33B963 /* Pods_ChalcedonyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B52919271B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52919261B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift */; };
 		B538B3001B3FCC8100F13CF5 /* CCDStayLaboData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */; };
 		B538B3021B3FCCDF00F13CF5 /* CCDCalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */; };
 		B538B3031B3FCEB700F13CF5 /* CCDStayLaboDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584E6E01B3FA87D00518849 /* CCDStayLaboDataProcessor.swift */; };
@@ -35,7 +37,6 @@
 		B597DE951B343770002A7CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B597DE931B343770002A7CC8 /* Main.storyboard */; };
 		B597DE971B343770002A7CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597DE961B343770002A7CC8 /* Images.xcassets */; };
 		B597DE9A1B343770002A7CC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B597DE981B343770002A7CC8 /* LaunchScreen.xib */; };
-		B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */; };
 		B597DEB31B343954002A7CC8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB11B343954002A7CC8 /* Fabric.framework */; };
 		B597DEB41B343954002A7CC8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B597DEB21B343954002A7CC8 /* Crashlytics.framework */; };
 		B5B7C3331B426C75007A0E13 /* CCDWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */; };
@@ -77,8 +78,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F87B4DD7E5F127727686886 /* Pods-ChalcedonyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChalcedonyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChalcedonyTests/Pods-ChalcedonyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57B6296131B94D4E5E33B963 /* Pods_ChalcedonyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChalcedonyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7663B3EB7192199B7404B85B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CC556A2A60D48F9581AC6B6 /* Pods-ChalcedonyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChalcedonyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChalcedonyTests/Pods-ChalcedonyTests.release.xcconfig"; sourceTree = "<group>"; };
 		97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B52919261B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboDataProcessorTests.swift; sourceTree = "<group>"; };
 		B538B2FF1B3FCC8100F13CF5 /* CCDStayLaboData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDStayLaboData.swift; sourceTree = "<group>"; };
 		B538B3011B3FCCDF00F13CF5 /* CCDCalculatedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDCalculatedData.swift; sourceTree = "<group>"; };
 		B53BFE8E1B42AC56008FC5E3 /* CCDSettingKaeritaiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDSettingKaeritaiTableViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +113,6 @@
 		B597DE991B343770002A7CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B597DE9F1B343770002A7CC8 /* ChalcedonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChalcedonyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597DEA41B343770002A7CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalcedonyTests.swift; sourceTree = "<group>"; };
 		B597DEB11B343954002A7CC8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B597DEB21B343954002A7CC8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B5B7C3321B426C75007A0E13 /* CCDWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDWeekday.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86626E3DA2B3F0AA7BA2641F /* Pods_ChalcedonyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +170,8 @@
 			children = (
 				C8B2904702BF5A7743ADDBE6 /* Pods.debug.xcconfig */,
 				97906DD2935AC12F8A3EE70E /* Pods.release.xcconfig */,
+				2F87B4DD7E5F127727686886 /* Pods-ChalcedonyTests.debug.xcconfig */,
+				7CC556A2A60D48F9581AC6B6 /* Pods-ChalcedonyTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,8 +269,8 @@
 		B597DEA21B343770002A7CC8 /* ChalcedonyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B597DEA51B343770002A7CC8 /* ChalcedonyTests.swift */,
 				B597DEA31B343770002A7CC8 /* Supporting Files */,
+				B52919261B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift */,
 			);
 			path = ChalcedonyTests;
 			sourceTree = "<group>";
@@ -332,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				7663B3EB7192199B7404B85B /* Pods.framework */,
+				57B6296131B94D4E5E33B963 /* Pods_ChalcedonyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -364,9 +372,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B597DEAC1B343770002A7CC8 /* Build configuration list for PBXNativeTarget "ChalcedonyTests" */;
 			buildPhases = (
+				22A3EAB2A458BE8D06E4FCBA /* Check Pods Manifest.lock */,
 				B597DE9B1B343770002A7CC8 /* Sources */,
 				B597DE9C1B343770002A7CC8 /* Frameworks */,
 				B597DE9D1B343770002A7CC8 /* Resources */,
+				B2E86F0398F3FA92C4E4ABB2 /* Embed Pods Frameworks */,
+				9C36776604F7CD9CEA89821C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -453,6 +464,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22A3EAB2A458BE8D06E4FCBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		58E26560B330DED09C95141F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +507,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C36776604F7CD9CEA89821C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChalcedonyTests/Pods-ChalcedonyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2E86F0398F3FA92C4E4ABB2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChalcedonyTests/Pods-ChalcedonyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B597DEAF1B3438FE002A7CC8 /* ShellScript */ = {
@@ -554,9 +610,9 @@
 				B5B7C3341B427354007A0E13 /* CCDWeekday.swift in Sources */,
 				B5F764931B4277C4003762B0 /* CCDMonth.swift in Sources */,
 				B538B3031B3FCEB700F13CF5 /* CCDStayLaboDataProcessor.swift in Sources */,
+				B52919271B50E82D00C5A178 /* CCDStayLaboDataProcessorTests.swift in Sources */,
 				B538B3061B3FD06100F13CF5 /* NSDate+extension.swift in Sources */,
 				B538B3041B3FCF0200F13CF5 /* CCDStayLaboData.swift in Sources */,
-				B597DEA61B343770002A7CC8 /* ChalcedonyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +761,7 @@
 		};
 		B597DEAD1B343770002A7CC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F87B4DD7E5F127727686886 /* Pods-ChalcedonyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -724,6 +781,7 @@
 		};
 		B597DEAE1B343770002A7CC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CC556A2A60D48F9581AC6B6 /* Pods-ChalcedonyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
