@@ -350,6 +350,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="J9b-ZB-Dfk" id="rG4-yR-vf6"/>
+                        <outlet property="searchBar" destination="LQQ-tw-TjV" id="umC-Fp-uRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4o2-bg-6sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
