@@ -8,14 +8,20 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
+class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
 
     private let initialLocation = (35.658774, 139.701361)
     private var mapItem = [MKMapItem]()
 
+    private let locationManager = CLLocationManager()
+    private var longitude: CLLocationDegrees! = 35.658774
+    private var latitude: CLLocationDegrees! = 139.701361
+
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,11 +37,32 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
         mapView.mapType = .Standard
 
         searchBar.delegate = self
+
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 300
+        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!){
+        println("update location")
+        mapView.setCenterCoordinate(newLocation.coordinate, animated:true)
+        var region  = mapView.region
+        region.center = newLocation.coordinate
+        region.span.latitudeDelta = 0.02
+        region.span.longitudeDelta = 0.02
+        mapView.setRegion(region,animated:true)
+        locationManager.stopUpdatingLocation()
+    }
+
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("fail update location")
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
