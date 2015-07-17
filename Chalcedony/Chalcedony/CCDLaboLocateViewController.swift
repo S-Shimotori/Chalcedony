@@ -22,6 +22,7 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    @IBOutlet weak var buttonToIndicateLocation: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +43,8 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 300
-        locationManager.startUpdatingLocation()
+
+        buttonToIndicateLocation.addTarget(self, action: "touchUpInsideButtonToIndicateLocation:", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,5 +108,9 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
     func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(false, animated: true)
         return true
+    }
+
+    func touchUpInsideButtonToIndicateLocation(sender: UIButton) {
+        locationManager.startUpdatingLocation()
     }
 }

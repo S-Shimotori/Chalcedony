@@ -334,21 +334,31 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-ZB-Dfk" userLabel="mapView">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="462"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujk-m8-ekA" userLabel="buttonToIndicateLocation">
+                                <rect key="frame" x="16" y="570" width="300" height="30"/>
+                                <state key="normal" title="現在地を表示">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="LQQ-tw-TjV" secondAttribute="centerX" id="0hN-Rh-f46"/>
                             <constraint firstItem="J9b-ZB-Dfk" firstAttribute="width" secondItem="bea-aJ-qWE" secondAttribute="width" id="1w5-ib-zGa"/>
                             <constraint firstAttribute="centerX" secondItem="J9b-ZB-Dfk" secondAttribute="centerX" id="3CS-nt-JAh"/>
+                            <constraint firstItem="ujk-m8-ekA" firstAttribute="leading" secondItem="bea-aJ-qWE" secondAttribute="leadingMargin" id="6Wo-1H-E9d"/>
                             <constraint firstItem="J9b-ZB-Dfk" firstAttribute="top" secondItem="LQQ-tw-TjV" secondAttribute="bottom" id="8zo-EM-K3f"/>
-                            <constraint firstItem="vYz-Bw-c8O" firstAttribute="top" secondItem="J9b-ZB-Dfk" secondAttribute="bottom" id="JpS-zT-SwP"/>
+                            <constraint firstItem="ujk-m8-ekA" firstAttribute="width" secondItem="bea-aJ-qWE" secondAttribute="width" multiplier="1:2" id="R6V-bx-2a4"/>
                             <constraint firstItem="LQQ-tw-TjV" firstAttribute="top" secondItem="car-Ml-7ey" secondAttribute="bottom" id="c21-E3-XVI"/>
+                            <constraint firstItem="J9b-ZB-Dfk" firstAttribute="bottom" secondItem="ujk-m8-ekA" secondAttribute="top" id="diJ-Vb-Q77"/>
                             <constraint firstItem="LQQ-tw-TjV" firstAttribute="width" secondItem="bea-aJ-qWE" secondAttribute="width" id="ji3-Aw-2fF"/>
+                            <constraint firstItem="vYz-Bw-c8O" firstAttribute="top" secondItem="ujk-m8-ekA" secondAttribute="bottom" id="tvo-Ad-BLG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonToIndicateLocation" destination="ujk-m8-ekA" id="vQU-tD-DU3"/>
                         <outlet property="mapView" destination="J9b-ZB-Dfk" id="rG4-yR-vf6"/>
                         <outlet property="searchBar" destination="LQQ-tw-TjV" id="umC-Fp-uRm"/>
                     </connections>
