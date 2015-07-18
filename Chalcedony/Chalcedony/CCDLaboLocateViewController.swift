@@ -76,7 +76,6 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
         let search = MKLocalSearch(request: request)
 
         search.startWithCompletionHandler(){response, error in
-            /*
             self.mapItem.removeAll(keepCapacity: false)
             self.mapView.removeAnnotations(self.mapView.annotations)
 
@@ -91,7 +90,7 @@ class CCDLaboLocateViewController: UIViewController, MKMapViewDelegate, UISearch
                 }
             }
 
-            self.mapView.showAnnotations(self.mapView.annotations, animated: true)*/
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         }
 
     }
